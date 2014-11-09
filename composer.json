@@ -1,14 +1,46 @@
 {
-    "name": "zendframework/skeleton-application",
-    "description": "Skeleton Application for ZF2",
-    "license": "BSD-3-Clause",
+    "name": "sfphp/sfphp.org",
+    "description": "Code that runs sfphp.org",
+    "license": "GPL-2.0+",
+    "type": "website",
     "keywords": [
-        "framework",
-        "zf2"
+        "sfphp",
+        "sfphp.org"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "https://github.com/sfphp/sfphp.org",
+    "support": {
+        "email": "php-139@meetup.com",
+        "source": "https://github.com/sfphp/sfphp.org",
+        "issues": "https://github.com/sfphp/sfphp.org/issues"
+    },
+    "authors": [
+        {
+            "name": "Mike Tougeron",
+            "email": "michael@sfphp.org"
+        },
+        {
+            "name": "Jacob Mather",
+            "email": "jacob@sfphp.org"
+        },
+        {
+            "name": "Tom Anderson",
+            "email": "tom.h.anderson@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": "2.3.*"
+        "php": ">=5.6.0",
+        "zendframework/zendframework": "2.3.*",
+        "dms/meetup-api-client": "master",
+        "guzzlehttp/guzzle": "5.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.3.*",
+        "fabpot/php-cs-fixer": "*",
+        "mockery/mockery": ">=0.7.2"
+    },
+    "autoload": {
+        "classmap": ["module/", "vendor/"]
     }
 }
