@@ -1,14 +1,40 @@
 {
-    "name": "zendframework/skeleton-application",
-    "description": "Skeleton Application for ZF2",
-    "license": "BSD-3-Clause",
+    "name": "sfphp/sfphp.org",
+    "description": "sfphp.org",
+    "type": "library",
+    "license": "GPL-2.0",
     "keywords": [
-        "framework",
+        "sfphp",
         "zf2"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "http://sfphp.org/",
+    "support": {
+        "email": "php-139@meetup.com",
+        "source": "https://github.com/sfphp/sfphp.org",
+        "issues": "https://github.com/sfphp/sfphp.org/issues"
+    },
+    "authors": [
+        {
+            "name": "Tom Anderson",
+            "email": "tom.h.anderson@gmail.com"
+        }
+    ],
+    "config": {
+        "process-timeout": 5000
+    },
     "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": "2.3.*"
+        "php": ">=5.4",
+        "zendframework/zendframework": ">=2.3.2,<3.0.0",
+        "zfcampus/zf-apigility": "~1.0",
+        "zfcampus/zf-apigility-documentation": "~1.0",
+        "zfcampus/zf-development-mode": "~2.0"
+    },
+    "require-dev": {
+        "zendframework/zftool": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master",
+        "zfcampus/zf-apigility-admin": "~1.0",
+        "zfcampus/zf-apigility-welcome": "~1.0",
+        "zfcampus/zf-deploy": "~1.0",
+        "fzaninotto/faker": "dev-master"
     }
 }
