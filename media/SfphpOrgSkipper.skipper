@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<skipper version="3.0.0.1104" name="sfphp.org.skipper" mvc="Without MVC" orm="Doctrine2" uuid="68b6e974-35fb-4337-a482-3e3553b0227b">
+  <module name="sfphp.org" import-format="Doctrine2Xml" import-path="../module/Db/config/xml" uuid="d4d884ea-2c99-4815-b2b0-6a99bb5c7050">
+    <entity name="User" uuid="2d4e12a3-3dc9-4402-87b3-9bb5298cd889">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="2a9ee3b7-a63d-42f5-a2d3-a739a29c99a9"/>
+      <field name="username" type="string" uuid="bdaee646-13b6-42f6-b5ef-f854cba3bb39"/>
+      <field name="email" type="string" uuid="361403a8-e84b-4ea7-9dcf-c787b3e28d58"/>
+      <field name="displayName" type="string" uuid="f54e66c6-cb63-46ef-94cf-6fa7a1069158"/>
+      <field name="password" type="string" uuid="9969bb95-aaaf-4a13-92d7-0c1f0713030d"/>
+      <field name="state" type="integer" uuid="8d3f3894-6677-4195-bbf2-20e0642f4bf4"/>
+    </entity>
+    <orm-attributes>
+      <attribute name="namespace">Db\Entity</attribute>
+    </orm-attributes>
+  </module>
+  <visual-data>
+    <entity uuid="2d4e12a3-3dc9-4402-87b3-9bb5298cd889" bg-color="4294967295" hdr-color="4292006610" position-x="69" position-y="42" size-x="0" size-x2="20" size-y="0" size-y2="20"/>
+    <project uuid="68b6e974-35fb-4337-a482-3e3553b0227b" size-x="0" size-x2="763" size-y="0" size-y2="717"/>
+    <module uuid="d4d884ea-2c99-4815-b2b0-6a99bb5c7050" bg-color="4287612913" position-x="33" position-y="46" size-x="11" size-x2="679" size-y="22" size-y2="630"/>
+  </visual-data>
+</skipper>
