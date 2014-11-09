@@ -11,5 +11,15 @@
  * credentials from accidentally being committed into version control.
  */
 
-return array(
-);
+return [
+    'doctrine' => [
+        'connection' => [
+            'orm_default' => [
+                'driverClass' => 'Doctrine\DBAL\Driver\PDOSqlite\Driver',
+                'params' => [
+                    'path' => __DIR__ . '/../../data/sqlite.db',
+                ],
+            ],
+        ],
+    ],
+];
