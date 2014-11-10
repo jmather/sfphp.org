@@ -33,19 +33,21 @@
         "process-timeout": 5000
     },
     "require": {
-        "php": ">=5.6.0",
+        "php": ">=5.5.0",
         "zendframework/zendframework": ">=2.3.2,<3.0.0",
-        "dms/meetup-api-client": "master",
         "guzzlehttp/guzzle": "5.0.*",
         "zfcampus/zf-apigility": "~1.0",
         "zfcampus/zf-apigility-documentation": "~1.0",
         "zfcampus/zf-development-mode": "~2.0",
-        "zfcampus/zf-apigility-doctrine": "dev-master",
-        "hounddog/doctrine-data-fixture-module": "0.0.*"
+        "zfcampus/zf-apigility-doctrine": "0.2.*",
+        "hounddog/doctrine-data-fixture-module": "0.0.*",
+        "dms/meetup-api-client": "1.0.x-dev",
+        "zf-commons/zfc-user-doctrine-orm": "1.*",
+        "socalnick/scn-social-auth-doctrine-orm": "1.4.*",
+        "fabpot/php-cs-fixer": "1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*",
-        "fabpot/php-cs-fixer": "*",
         "mockery/mockery": ">=0.7.2",
         "zendframework/zftool": "dev-master",
         "zendframework/zend-developer-tools": "dev-master",
