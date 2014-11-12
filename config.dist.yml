@@ -1,0 +1,5 @@
+name: SFPHP
+base_path: ./
+log_path: ./logs #~/Library/Logs/Vagrant will show up in console on mac!
+web_root: public
+nfs_enabled: false # Only enable after the first run -- currently box doesn't ship w/ NFS

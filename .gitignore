@@ -4,6 +4,7 @@ vendor/
 # Local configs
 config/autoload/*local.php
 local.php
+config.yml
 
 # Binary gettext files
 *.mo
@@ -14,6 +15,8 @@ data/cache/
 data/sessions/
 data/tmp/
 temp/
+logs/
+.vagrant/
 
 *.phar
 
