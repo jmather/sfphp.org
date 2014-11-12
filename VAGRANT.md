@@ -24,3 +24,11 @@ https://www.vagrantup.com/downloads.html
 
     vagrant plugin install vagrant-cachier
     
+## How to use
+
+Execute the following command:
+
+    vagrant up
+
+Then browse to: http://192.168.56.101/
+    
