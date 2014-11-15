@@ -41,6 +41,10 @@ We will be following PSR-1 & PSR-2 standards augmented with Doctrine coding stan
  * [PSR-2: Coding Style Guide](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
  * [Doctrine Coding Standard](https://github.com/deeky666/doctrine-coding-standard/blob/master/Docs/README.md)
 
+Libraries should follow PSR-4 and may follow PSR-0
+
+* [PSR-4 Autoloader](http://www.php-fig.org/psr/psr-4/)
+
 ```
 ./vendor/bin/php-cs-fixer fix .
 ```
