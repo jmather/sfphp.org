@@ -11,7 +11,27 @@
  * credentials from accidentally being committed into version control.
  */
 
-return [
+$ormParams = [
+    'database'  => 'sfphp',
+    'username'  => 'root',
+    'password'  => '',
+    'hostname'  => 'localhost',
+    'port'  => '3306',
+];
+
+$meetup = [
+    'key' => 'asdf',
+    'secret' => 'fdsa',
+];
+
+/** -----End User Edit-------------------------------------- **/
+
+return array(
+    'meetup' => $meetup,
+
+    /**
+     * Doctrine configuration for sqlite
+     */
     'doctrine' => [
         'connection' => [
             'orm_default' => [
@@ -22,4 +42,25 @@ return [
             ],
         ],
     ],
-];
+
+    /**
+     * Doctrine configuration for MySQL or Maria DB
+     */
+    /**
+    'doctrine' => array(
+        'connection' => array(
+            'orm_default' => array(
+                'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
+                'params' => array(
+                    'database'  => $ormParams['database'],
+                    'user'  => $ormParams['username'],
+                    'password'  => $ormParams['password'],
+                    'host'  => $ormParams['hostname'],
+                    'dbname'  => $ormParams['database'],
+                    'port'  => $ormParams['port'],
+                ),
+            ),
+        ),
+    ),
+    */
+);
