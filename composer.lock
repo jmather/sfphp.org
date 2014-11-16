@@ -1502,25 +1502,28 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "1e091702a5a38e6b4c1ba9ca816e3dd343df2e2d"
+                "reference": "5843509fed39dee4b356a306401e9dd1a931fec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/1e091702a5a38e6b4c1ba9ca816e3dd343df2e2d",
-                "reference": "1e091702a5a38e6b4c1ba9ca816e3dd343df2e2d",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/5843509fed39dee4b356a306401e9dd1a931fec7",
+                "reference": "5843509fed39dee4b356a306401e9dd1a931fec7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "phpunit/phpunit": "~4.2"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1534,13 +1537,12 @@
             ],
             "authors": [
                 {
-                    "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
-                },
-                {
                     "name": "Kore Nordmann",
                     "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Diff implementation",
@@ -1548,7 +1550,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2013-08-03 16:46:33"
+            "time": "2014-08-15 10:29:00"
         },
         {
             "name": "socalnick/scn-social-auth",
@@ -2856,16 +2858,16 @@
         },
         {
             "name": "zfcampus/zf-hal",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-hal.git",
-                "reference": "2ef2e8c91655b91ab4a767a1540b017eb2f0c891"
+                "reference": "7f64cd827c1b0c11a7d92789840b996e4f7cbcf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-hal/zipball/2ef2e8c91655b91ab4a767a1540b017eb2f0c891",
-                "reference": "2ef2e8c91655b91ab4a767a1540b017eb2f0c891",
+                "url": "https://api.github.com/repos/zfcampus/zf-hal/zipball/7f64cd827c1b0c11a7d92789840b996e4f7cbcf3",
+                "reference": "7f64cd827c1b0c11a7d92789840b996e4f7cbcf3",
                 "shasum": ""
             },
             "require": {
@@ -2881,8 +2883,8 @@
                 "zfcampus/zf-api-problem": "~1.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "*@dev",
                 "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.5.*",
                 "zendframework/zend-console": "~2.3",
                 "zendframework/zend-filter": "~2.3",
                 "zendframework/zend-http": "~2.3",
@@ -2899,8 +2901,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "ZF\\Hal\\": "src/",
-                    "ZFTest\\Hal\\": "test/"
+                    "ZF\\Hal\\": "src/"
                 },
                 "classmap": [
                     "Module.php"
@@ -2919,7 +2920,7 @@
                 "zend",
                 "zf2"
             ],
-            "time": "2014-08-12 19:52:38"
+            "time": "2014-11-11 17:39:53"
         },
         {
             "name": "zfcampus/zf-mvc-auth",
@@ -3292,12 +3293,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "bd8e63631145016cfdf26e658b4a8a2a393698c2"
+                "reference": "44eae4deeb065454e68b3c9911181285f01003c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/bd8e63631145016cfdf26e658b4a8a2a393698c2",
-                "reference": "bd8e63631145016cfdf26e658b4a8a2a393698c2",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44eae4deeb065454e68b3c9911181285f01003c6",
+                "reference": "44eae4deeb065454e68b3c9911181285f01003c6",
                 "shasum": ""
             },
             "require": {
@@ -3333,7 +3334,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-11-10 16:46:22"
+            "time": "2014-11-12 17:27:49"
         },
         {
             "name": "herrera-io/json",
@@ -3878,16 +3879,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.3.4",
+            "version": "4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "23e4e0310f037aae873cc81b8658dbbb82878f71"
+                "reference": "2dab9d593997db4abcf58d0daf798eb4e9cecfe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/23e4e0310f037aae873cc81b8658dbbb82878f71",
-                "reference": "23e4e0310f037aae873cc81b8658dbbb82878f71",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2dab9d593997db4abcf58d0daf798eb4e9cecfe1",
+                "reference": "2dab9d593997db4abcf58d0daf798eb4e9cecfe1",
                 "shasum": ""
             },
             "require": {
@@ -3948,7 +3949,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-10-22 11:43:12"
+            "time": "2014-11-11 10:11:09"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
