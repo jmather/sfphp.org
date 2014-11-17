@@ -47,14 +47,14 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*",
-        "fabpot/php-cs-fixer": "*",
         "mockery/mockery": ">=0.7.2",
         "zendframework/zftool": "dev-master",
         "zendframework/zend-developer-tools": "dev-master",
         "zfcampus/zf-apigility-admin": "~1.0",
         "zfcampus/zf-apigility-welcome": "~1.0",
         "zfcampus/zf-deploy": "~1.0",
-        "fzaninotto/faker": "dev-master"
+        "fzaninotto/faker": "dev-master",
+        "fabpot/php-cs-fixer": "dev-master"
     },
     "autoload": {
         "classmap": ["module/", "vendor/"]

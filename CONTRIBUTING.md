@@ -35,11 +35,15 @@ Testing will be done using PHPUnit. We have travis-ci setup to do testing of eac
 ```
 
 ## Coding Standards
-We will be following PSR-1 & PSR-2 standards. We will use [fabpot/php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to enforce them.
+We will be following PSR-0, PSR-1 & PSR-2 standards augmented with Doctrine coding standards. We will use [fabpot/php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to enforce them.  To run php-cs-fixer use ```vendor/bin/php-cs-fixer --config-file=./.php_cs```
 
- * [PSR-0: Autoloading Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
  * [PSR-1: Basic Coding Standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
  * [PSR-2: Coding Style Guide](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
+ * [Doctrine Coding Standard](https://github.com/deeky666/doctrine-coding-standard/blob/master/Docs/README.md)
+
+Libraries should follow PSR-4 and may follow PSR-0
+
+* [PSR-4 Autoloader](http://www.php-fig.org/psr/psr-4/)
 
 ```
 ./vendor/bin/php-cs-fixer fix .
