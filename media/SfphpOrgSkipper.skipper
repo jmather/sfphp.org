@@ -21,15 +21,25 @@
       <association-field from="member_id" to="id"/>
     </association>
     <entity name="Event" uuid="ae947869-b539-475c-a96e-44a0aa05c2a3">
-      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="2c7cbdff-97ce-45f5-b142-fd1387456ac3"/>
+      <field name="id" type="integer" required="true" unique="true" primary="true" uuid="2c7cbdff-97ce-45f5-b142-fd1387456ac3"/>
       <field name="venue_id" type="integer" required="true" uuid="c32ccce9-98cb-420b-a45f-541adf1f70ae"/>
-      <field name="meetupId" type="integer" uuid="86fe3ea9-37db-4685-98e5-8856e91e529c"/>
       <field name="scheduledAt" type="datetime" uuid="7a2ae00c-7bff-4f25-8d22-e0fed79747a2"/>
       <field name="videoUrl" type="string" uuid="f4eb903f-f994-4b3d-b2bc-935cdef02c97"/>
       <field name="videoStartAt" type="datetime" uuid="47be1392-166d-47ec-b5d2-56cde9ce29a0"/>
       <field name="startAt" type="datetime" uuid="9690bfb7-65e8-47f2-941d-7c172ceb0e72"/>
+      <field name="name" type="string" uuid="e1e064f4-d2b7-4700-b8ca-301f829111d9"/>
+      <field name="abstract" type="text" uuid="24f31f04-4652-477a-bf51-d38764b5ee82"/>
       <field name="description" type="text" uuid="d66d2e3c-144b-4b51-8fbd-d8d7773aad5b"/>
+      <field name="why" type="string" uuid="8ab1238f-1922-44fd-b34b-46287804afa1"/>
       <field name="meetup_group_id" type="integer" uuid="39ba95a3-42d8-4b88-b667-e460c482c7af"/>
+      <field name="duration" type="integer" uuid="8f4e9ff3-9117-4331-905a-671f86ec19a5"/>
+      <field name="guestLimit" type="integer" uuid="9f04b321-dc76-4b39-94a7-b46e77d432dd"/>
+      <field name="directions" type="text" uuid="f889403d-d738-4789-a7a9-9fcb50e85915"/>
+      <field name="isPublished" type="integer" uuid="7bf22415-0c6b-411a-ad53-b10225eca57c"/>
+      <field name="rsvpOpen" type="datetime" uuid="1ce4a30d-7cf2-486a-8122-854fb0839839"/>
+      <field name="rsvpClose" type="datetime" uuid="e69e31f0-3632-47df-8af9-a56f7ae0feb3"/>
+      <field name="rsvpLimit" type="integer" uuid="3c147af5-a284-489c-bd6e-b69e69408166"/>
+      <field name="waitListing" type="string" uuid="f0b9decd-d014-4a9c-b302-f8c7cc7cde2c"/>
     </entity>
     <association from="Event" to="Venue" owner-alias="event" inverse-alias="venue" uuid="9b361ee5-6abb-4d1e-ba57-4babb79542e3">
       <association-field from="venue_id" to="id"/>
@@ -77,7 +87,7 @@
       <association-field from="member_id" to="id"/>
     </association>
     <entity name="MeetupGroup" uuid="be649d97-ac0c-49ad-a82d-8a69c3b16df9">
-      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="500b07b7-cf1d-473f-9747-380f95311fd9"/>
+      <field name="id" type="integer" required="true" unique="true" primary="true" uuid="500b07b7-cf1d-473f-9747-380f95311fd9"/>
       <field name="name" type="string" required="true" uuid="ca438b05-ba39-48ef-8cbf-d733e2916459"/>
     </entity>
     <entity name="MemberLink" uuid="9b84a7af-6409-4a66-97af-513e710cb616">
@@ -179,9 +189,8 @@
       <association-field from="meetup_group_id" to="id"/>
     </association>
     <entity name="Venue" uuid="ba59c5cd-24cd-4cdf-ba90-935ded7734a9">
-      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="490db093-c68a-48d8-a4b8-0c634f0f218a"/>
+      <field name="id" type="integer" required="true" unique="true" primary="true" uuid="490db093-c68a-48d8-a4b8-0c634f0f218a"/>
       <field name="sponsor_id" type="integer" required="true" uuid="b446a93e-0751-42c1-8645-b9e6fd5ddb7b"/>
-      <field name="venueId" type="integer" uuid="b9dcb9a9-187c-4255-8828-e786627bae35"/>
       <field name="name" type="string" uuid="0f81f189-dd82-40b4-8ad6-5e44f49866d5"/>
       <field name="address1" type="string" uuid="597d8b7e-cb02-483f-b362-05b81f44e42d"/>
       <field name="address2" type="string" uuid="2d3a9953-1b40-421a-9f23-57962adbac6e"/>
@@ -190,10 +199,10 @@
       <field name="latLon" type="string" uuid="b14d66e2-371b-4c2b-a8ba-852059c1eaee"/>
       <field name="phone" type="string" uuid="e2aacb89-8da1-43dd-8d5d-d028ca2f8105"/>
       <field name="zip" type="string" uuid="c8e5d568-9f40-4144-9a24-061ac432b5aa"/>
+      <field name="capacity" type="integer" uuid="1e17791d-b993-4bc1-982b-443256fcf6de"/>
       <field name="description" type="text" uuid="57128200-7c82-476a-9f3d-12c7512cd3b9"/>
       <field name="contact" type="text" uuid="947ecdc9-fb34-4e8c-b376-4c3a1dda9c6a"/>
       <field name="security" type="text" uuid="7ccaa36f-75d6-4fd3-928c-ef50f5d6991e"/>
-      <field name="capacity" type="text" uuid="1e17791d-b993-4bc1-982b-443256fcf6de"/>
       <field name="equipment" type="text" uuid="0a6a1fec-88be-4f3e-8446-a55e7bab5c18"/>
     </entity>
     <association from="Venue" to="Sponsor" owner-alias="venue" inverse-alias="sponsor" uuid="eae3d069-0c15-46cb-af69-a06dea936a5c">
@@ -232,7 +241,7 @@
       <field name="meetup_group_id" type="integer" required="true" primary="true" uuid="a216d76f-caf1-4414-bcd1-d763c8a9a98c"/>
       <field name="event_id" type="integer" required="true" primary="true" uuid="9eb77ce5-da5b-48f5-98ef-03781c202174"/>
     </entity>
-    <many-to-many mn-entity="JointMeetupGroupToEvent" caption="MeetupGroup to Event" uuid="542093a0-9a59-4bfe-bb69-bc18444d6122">
+    <many-to-many mn-entity="JointMeetupGroupToEvent" uuid="542093a0-9a59-4bfe-bb69-bc18444d6122">
       <many-to-many-entity name="Event" owning-side="true" alias="jointEvent" uuid="bfebd768-bf25-45ce-91c6-de4f7944aba8">
         <many-to-many-field from="event_id" to="id"/>
       </many-to-many-entity>
@@ -240,12 +249,30 @@
         <many-to-many-field from="meetup_group_id" to="id"/>
       </many-to-many-entity>
     </many-to-many>
+    <entity name="VenueQuestion" uuid="e1a13ebd-6690-4b38-967b-e0addecc5bf6">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="380f09a6-0e4a-475e-a294-bd61c7d6bd11"/>
+      <field name="body" type="string" uuid="090124eb-4926-480a-a6c7-37dc75b33fe5"/>
+      <field name="venue_id" type="integer" uuid="81cdf2e5-2dba-416c-8ab8-6a7dee819fb3"/>
+    </entity>
+    <association from="VenueQuestion" to="Venue" owner-alias="venueQuestion" inverse-alias="venue" uuid="8b511517-15e0-43dc-b3d3-2b0083ce52bc">
+      <association-field from="venue_id" to="id"/>
+    </association>
+    <entity name="EventQuestion" uuid="ebd07b78-d6ee-4da7-b4bd-51e17171d1b2">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="688098df-50a4-4327-9fc7-3676095b2014"/>
+      <field name="body" type="string" uuid="4d051021-bcfe-4471-b435-11fc895c0877"/>
+      <field name="event_id" type="integer" uuid="e6acc01d-755c-4bf3-ad8d-ae28b46cdc84"/>
+    </entity>
+    <association from="EventQuestion" to="Event" owner-alias="eventQuestion" inverse-alias="event" uuid="96af8733-efe2-40f4-a78e-99734e64210a">
+      <association-field from="event_id" to="id"/>
+    </association>
     <comment caption="SF PHP" description="All text fields may be populated with markdown." uuid="484af149-29c2-488e-bae7-12436d51e779"/>
     <region caption="Sponsor" uuid="154be245-3bc2-4284-a346-3470850d1417">
+      <comment caption="Venue Questions" description="The venue questions are copied into EventQuestion when a venue is assigned to an event.  The EventQuestion (max 6) are posted to Meetup when the event is created." uuid="81ce1590-aff5-4de8-9cb6-19690b156a46"/>
       <entity-ref name="Sponsor"/>
       <entity-ref name="SponsorContact"/>
       <entity-ref name="SponsorContribution"/>
       <entity-ref name="Venue"/>
+      <entity-ref name="VenueQuestion"/>
     </region>
     <region caption="Link" uuid="ad57c374-71e8-4d53-8899-389500aedea0">
       <comment caption="Link" description="Inheritance could be used here but as we're generating the entities, using inheritance is more trouble than it's worth." uuid="0ad67346-4d68-4a8b-b470-f5b58d8ea3aa"/>
@@ -270,6 +297,7 @@
       <entity-ref name="Event"/>
       <entity-ref name="MeetupGroup"/>
       <entity-ref name="JointMeetupGroupToEvent"/>
+      <entity-ref name="EventQuestion"/>
     </region>
     <region caption="Pages" uuid="d3700291-894a-43b0-9c52-29ad28c33820">
       <entity-ref name="Page"/>
@@ -281,7 +309,7 @@
   <visual-data>
     <comment uuid="0ad67346-4d68-4a8b-b470-f5b58d8ea3aa" bg-color="4294967264" position-x="612" position-y="50" size-x="0" size-x2="168" size-y="0" size-y2="66" txt-color="4278190080"/>
     <association uuid="112f52ba-c270-4c92-9fdd-6f9dab47ee12" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
-    <region uuid="154be245-3bc2-4284-a346-3470850d1417" bg-color="4294897635" position-x="485" position-y="10" size-x="0" size-x2="686" size-y="0" size-y2="364"/>
+    <region uuid="154be245-3bc2-4284-a346-3470850d1417" bg-color="4294897635" position-x="779" position-y="3" size-x="0" size-x2="686" size-y="0" size-y2="364"/>
     <association uuid="1e9e16b4-1592-412e-b5f9-cf7dfeb8e7cc" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
     <entity uuid="1f8cf830-8dfa-45fc-b3d4-80acc80cedea" bg-color="4294967295" hdr-color="4292006610" position-x="387" position-y="14" size-x="0" size-x2="130" size-y="0" size-y2="129"/>
     <association uuid="29f769ff-ae4d-498f-84f4-57d85f6fc915" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
@@ -289,8 +317,8 @@
     <entity uuid="37496cd2-1dbf-47c6-b195-25f75f1648e0" bg-color="4294967295" hdr-color="4292006610" position-x="236" position-y="97" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
     <association uuid="3c8b7b88-7a47-4ede-bbeb-33aee12097e1" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <association uuid="4577a64e-f295-4f08-adbb-053b52790007" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
-    <region uuid="4816cd95-e5f3-4f5e-8d11-17a8c70d5e0e" bg-color="4293391869" position-x="62" position-y="383" size-x="0" size-x2="655" size-y="0" size-y2="279"/>
-    <comment uuid="484af149-29c2-488e-bae7-12436d51e779" bg-color="4294967264" position-x="52" position-y="15" size-x="0" size-x2="172" size-y="0" size-y2="66" txt-color="4278190080"/>
+    <region uuid="4816cd95-e5f3-4f5e-8d11-17a8c70d5e0e" bg-color="4293391869" position-x="788" position-y="388" size-x="0" size-x2="655" size-y="0" size-y2="279"/>
+    <comment uuid="484af149-29c2-488e-bae7-12436d51e779" bg-color="4294967264" position-x="18" position-y="5" size-x="0" size-x2="172" size-y="0" size-y2="66" txt-color="4278190080"/>
     <association uuid="49a40295-fc3a-403d-a9e9-75f53979dbfd" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <entity uuid="4bfa892c-01c8-4c4a-92bd-27205b016a91" bg-color="4294967295" hdr-color="4292006610" position-x="187" position-y="34" size-x="0" size-x2="134" size-y="0" size-y2="60"/>
     <association uuid="4de9c21b-5134-4412-83aa-56783a0a1316" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
@@ -298,7 +326,7 @@
     <entity uuid="55ccc5ec-f2f4-4ab0-a2b5-a7fd7d855d3a" bg-color="4294967295" hdr-color="4292006610" position-x="-24" position-y="44" size-x="0" size-x2="95" size-y="0" size-y2="87"/>
     <many-to-many-association uuid="5669a659-aa23-4c4a-a71e-e93aa2c0b4e0" color="4288059030"/>
     <association uuid="585805fa-5b6a-4473-bfd6-c5ce90a2dbf3" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
-    <entity uuid="605b7a29-eb1c-4c4a-9ed5-6cb6bfe9d247" bg-color="4294967295" hdr-color="4292006610" position-x="46" position-y="147" size-x="0" size-x2="135" size-y="0" size-y2="60"/>
+    <entity uuid="605b7a29-eb1c-4c4a-9ed5-6cb6bfe9d247" bg-color="4294967295" hdr-color="4292006610" position-x="201" position-y="-20" size-x="0" size-x2="130" size-y="0" size-y2="60"/>
     <association uuid="664fddc9-d5f9-430f-8c3a-17d3fdff9e3a" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
     <entity uuid="6739cfe1-d85d-4ae5-886d-ac30b309ea02" bg-color="4294967295" hdr-color="4292006610" position-x="24" position-y="153" size-x="0" size-x2="110" size-y="0" size-y2="87"/>
     <project uuid="68b6e974-35fb-4337-a482-3e3553b0227b" size-x="28" size-x2="2254" size-y="26" size-y2="1115"/>
@@ -311,9 +339,12 @@
     <entity uuid="762aeefa-c5c8-48cc-9e3b-9232bad71b3f" bg-color="4294967295" hdr-color="4292006610" position-x="561" position-y="27" size-x="0" size-x2="114" size-y="0" size-y2="143"/>
     <association uuid="77965304-d08a-49e1-a2df-5ec5133b220c" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <entity uuid="818d0972-b832-40af-a6ca-e698fc59a29a" bg-color="4294967295" hdr-color="4292006610" position-x="219" position-y="35" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
+    <comment uuid="81ce1590-aff5-4de8-9cb6-19690b156a46" bg-color="4294967264" position-x="191" position-y="232" size-x="0" size-x2="201" size-y="0" size-y2="80" txt-color="4278190080"/>
     <association uuid="870a76d6-fd69-495a-9a43-899ca364f115" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
     <association uuid="886ed065-1cfd-4d90-b248-8c5156385cfc" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
+    <association uuid="8b511517-15e0-43dc-b3d3-2b0083ce52bc" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
     <entity uuid="8d785178-d15f-4306-8156-786c7e2356b4" bg-color="4294967295" hdr-color="4292006610" position-x="44" position-y="49" size-x="0" size-x2="20" size-y="0" size-y2="20"/>
+    <association uuid="96af8733-efe2-40f4-a78e-99734e64210a" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
     <association uuid="9b361ee5-6abb-4d1e-ba57-4babb79542e3" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <entity uuid="9b84a7af-6409-4a66-97af-513e710cb616" bg-color="4294967295" hdr-color="4292006610" position-x="218" position-y="48" size-x="0" size-x2="105" size-y="0" size-y2="45"/>
     <region uuid="a0626c7c-6084-41ff-ab3d-c19add009575" bg-color="4293584113" position-x="63" position-y="674" size-x="0" size-x2="410" size-y="-28" size-y2="223"/>
@@ -321,19 +352,21 @@
     <entity uuid="a96bf94d-c3aa-4c85-b3aa-67ad44424d83" bg-color="4294967295" hdr-color="4292006610" position-x="344" position-y="48" size-x="0" size-x2="121" size-y="0" size-y2="45"/>
     <association uuid="aa5b21b9-f64f-4bfb-8917-9dc9713c198b" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <region uuid="ad57c374-71e8-4d53-8899-389500aedea0" bg-color="4294831087" position-x="1257" position-y="816" size-x="52" size-x2="864" size-y="0" size-y2="153"/>
-    <entity uuid="ae947869-b539-475c-a96e-44a0aa05c2a3" bg-color="4294967295" hdr-color="4292006610" position-x="230" position-y="27" size-x="0" size-x2="116" size-y="0" size-y2="129"/>
+    <entity uuid="ae947869-b539-475c-a96e-44a0aa05c2a3" bg-color="4294967295" hdr-color="4292006610" position-x="200" position-y="125" size-x="0" size-x2="130" size-y="0" size-y2="255"/>
     <association uuid="b153354e-a980-45f5-a193-2c1ea8b1b5e9" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <entity uuid="ba59c5cd-24cd-4cdf-ba90-935ded7734a9" bg-color="4294967295" hdr-color="4292006610" position-x="48" position-y="29" size-x="0" size-x2="20" size-y="0" size-y2="20"/>
-    <association uuid="bbea1d11-c211-49fc-9096-e789cbc7c7f8" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030"/>
+    <association uuid="bbea1d11-c211-49fc-9096-e789cbc7c7f8" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <entity uuid="be649d97-ac0c-49ad-a82d-8a69c3b16df9" bg-color="4294967295" hdr-color="4292006610" position-x="20" position-y="39" size-x="0" size-x2="77" size-y="0" size-y2="45"/>
     <entity uuid="c3d7e35c-5171-4555-a774-15a078e8dc06" bg-color="4294967295" hdr-color="4292006610" position-x="488" position-y="48" size-x="0" size-x2="104" size-y="0" size-y2="45"/>
     <region uuid="d3700291-894a-43b0-9c52-29ad28c33820" bg-color="4293391335" position-x="521" position-y="683" size-x="0" size-x2="384" size-y="0" size-y2="264"/>
     <module uuid="d4d884ea-2c99-4815-b2b0-6a99bb5c7050" bg-color="4287612913" position-x="33" position-y="46" size-x="11" size-x2="2171" size-y="22" size-y2="1019"/>
-    <region uuid="d5771e08-38ad-41c3-a83c-6ece690bcc52" bg-color="4293391335" position-x="40" position-y="132" size-x="0" size-x2="403" size-y="-1" size-y2="232"/>
+    <region uuid="d5771e08-38ad-41c3-a83c-6ece690bcc52" bg-color="4293391335" position-x="40" position-y="132" size-x="0" size-x2="722" size-y="47" size-y2="506"/>
     <association uuid="d5ea86da-2ff2-452b-9502-a0509ae3311b" center-position-x="0" center-position-y="-20" color="4288059030"/>
+    <entity uuid="e1a13ebd-6690-4b38-967b-e0addecc5bf6" bg-color="4294967295" hdr-color="4292006610" position-x="236" position-y="160" size-x="0" size-x2="96" size-y="0" size-y2="59"/>
     <entity uuid="e627778e-ea46-4737-959f-b91958266913" bg-color="4294967295" hdr-color="4292006610" position-x="392" position-y="64" size-x="0" size-x2="87" size-y="0" size-y2="59"/>
     <association uuid="eae3d069-0c15-46cb-af69-a06dea936a5c" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="4288059030" split="1"/>
     <entity uuid="eb901b94-e591-4cab-badf-c5a37cd4886e" bg-color="4294967295" hdr-color="4292006610" position-x="383" position-y="174" size-x="0" size-x2="105" size-y="0" size-y2="45"/>
+    <entity uuid="ebd07b78-d6ee-4da7-b4bd-51e17171d1b2" bg-color="4294967295" hdr-color="4292006610" position-x="419" position-y="198" size-x="0" size-x2="94" size-y="0" size-y2="59"/>
     <entity uuid="ed8d9c35-c8f2-4a29-b663-4ae5298dddbd" bg-color="4294967295" hdr-color="4292006610" position-x="29" position-y="76" size-x="0" size-x2="130" size-y="0" size-y2="129"/>
   </visual-data>
 </skipper>
