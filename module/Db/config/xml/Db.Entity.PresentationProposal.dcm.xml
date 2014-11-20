@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Db\Entity\PresentationProposal">
+    <id name="id" type="integer">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="createdAt" type="datetime" nullable="true"/>
+    <field name="approvedAt" type="datetime" nullable="true"/>
+    <field name="description" type="text" nullable="true"/>
+    <field name="consideration" type="text" nullable="true"/>
+    <many-to-one field="presentation" target-entity="Db\Entity\Presentation" inversed-by="presentationSubmit">
+      <join-columns>
+        <join-column name="presentation_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="event" target-entity="Db\Entity\Event" inversed-by="presentationProposal">
+      <join-columns>
+        <join-column name="meetup_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="meetupGroup" target-entity="Db\Entity\MeetupGroup" inversed-by="presentationProposal">
+      <join-columns>
+        <join-column name="meetup_group_id" referenced-column-name="id" nullable="false"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
