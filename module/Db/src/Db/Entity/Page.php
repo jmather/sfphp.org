@@ -3,12 +3,115 @@
 namespace Db\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Zend\InputFilter\Factory as InputFactory;
+use Zend\InputFilter\InputFilter;
+use Zend\InputFilter\InputFilterAwareInterface;
+use Zend\InputFilter\InputFilterInterface;
+use Zend\Stdlib\ArraySerializableInterface;
+use DateTime;
 
 /**
  * Page
  */
-class Page
+class Page implements InputFilterAwareInterface, ArraySerializableInterface
 {
+    public function exchangeArray(array $array)
+    {
+        foreach ($array as $field => $value) {
+            switch ($field) {
+                case 'title':
+                    $this->setTitle($value);
+                    break;
+                case 'description':
+                    $this->setDescription($value);
+                    break;
+                case 'isPublished':
+                    $this->setIsPublished($value);
+                    break;
+                case 'urlIdentifier':
+                    $this->setUrlIdentifier($value);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $this->setUpdatedAt(new DateTime());
+
+        return $this;
+    }
+
+    public function getArrayCopy()
+    {
+        return [
+            'id' => $this->getId(),
+            'urlIdentifier' => $this->getUrlIdentifier(),
+            'title' => $this->getTitle(),
+            'description' => $this->getDescription(),
+            'isPublished' => $this->getIsPublished(),
+            'updatedAt' => $this->getUpdatedAt(),
+        ];
+    }
+
+// Add content to this method:
+    public function setInputFilter(InputFilterInterface $inputFilter)
+    {
+        throw new \Exception("Not used");
+    }
+
+    public function getInputFilter()
+    {
+        $inputFilter = new InputFilter();
+        $factory     = new InputFactory();
+
+        $inputFilter->add($factory->createInput(array(
+            'name' => 'urlIdentifier',
+            'required' => true,
+            'filters' => array(
+                array('name' => 'Alnum'),
+            ),
+        )));
+
+        $inputFilter->add($factory->createInput(array(
+            'name'     => 'title',
+            'required' => true,
+            'filters'  => array(
+                array('name' => 'StripTags'),
+                array('name' => 'StringTrim'),
+            ),
+            'validators' => array(
+                array(
+                    'name'    => 'StringLength',
+                    'options' => array(
+                        'encoding' => 'UTF-8',
+                        'min'      => 1,
+                        'max'      => 255,
+                    ),
+                ),
+            ),
+        )));
+
+        $inputFilter->add($factory->createInput(array(
+            'name'     => 'description',
+            'required' => false,
+            'filters'  => array(
+            ),
+            'validators' => array(
+            ),
+        )));
+
+        $inputFilter->add($factory->createInput(array(
+            'name' => 'isPublished',
+            'required' => true,
+            'filters' => array(
+                array('name' => 'Boolean'),
+            ),
+        )));
+
+
+        return $inputFilter;
+    }
+
     /**
      * @var string
      */
@@ -56,7 +159,7 @@ class Page
     /**
      * Get urlIdentifier
      *
-     * @return string 
+     * @return string
      */
     public function getUrlIdentifier()
     {
@@ -79,7 +182,7 @@ class Page
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -102,7 +205,7 @@ class Page
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -125,7 +228,7 @@ class Page
     /**
      * Get isPublished
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsPublished()
     {
@@ -148,7 +251,7 @@ class Page
     /**
      * Get updatedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -158,7 +261,7 @@ class Page
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
