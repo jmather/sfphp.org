@@ -2199,16 +2199,16 @@
         },
         {
             "name": "zfcampus/zf-apigility-doctrine",
-            "version": "0.2.5",
+            "version": "0.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zfcampus/zf-apigility-doctrine.git",
-                "reference": "2e1c49ae874c195157db199d035c81155c556131"
+                "reference": "0ef011469d3e26eac7d8974b81888e20410ca480"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zfcampus/zf-apigility-doctrine/zipball/2e1c49ae874c195157db199d035c81155c556131",
-                "reference": "2e1c49ae874c195157db199d035c81155c556131",
+                "url": "https://api.github.com/repos/zfcampus/zf-apigility-doctrine/zipball/0ef011469d3e26eac7d8974b81888e20410ca480",
+                "reference": "0ef011469d3e26eac7d8974b81888e20410ca480",
                 "shasum": ""
             },
             "require": {
@@ -2252,7 +2252,7 @@
                 "apigility",
                 "doctrine"
             ],
-            "time": "2014-11-10 20:15:33"
+            "time": "2014-11-17 22:35:36"
         },
         {
             "name": "zfcampus/zf-apigility-documentation",
@@ -3049,12 +3049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "53131af2aa03397c80f375d196dfa8a6b7a93891"
+                "reference": "95055a87d64b915407f057ecc7410cf63633e520"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/53131af2aa03397c80f375d196dfa8a6b7a93891",
-                "reference": "53131af2aa03397c80f375d196dfa8a6b7a93891",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/95055a87d64b915407f057ecc7410cf63633e520",
+                "reference": "95055a87d64b915407f057ecc7410cf63633e520",
                 "shasum": ""
             },
             "require": {
@@ -3073,7 +3073,7 @@
             "type": "application",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -3092,7 +3092,7 @@
                 }
             ],
             "description": "A script to automatically fix Symfony Coding Standard",
-            "time": "2014-11-16 20:47:53"
+            "time": "2014-11-17 22:20:33"
         },
         {
             "name": "fzaninotto/faker",
