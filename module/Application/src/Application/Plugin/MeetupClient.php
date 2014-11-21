@@ -7,7 +7,6 @@ use DMS\Service\Meetup\MeetupKeyAuthClient;
 
 class MeetupClient extends AbstractPlugin
 {
-
     /**
      * @var MeetupKeyAuthClient
      */
@@ -39,5 +38,4 @@ class MeetupClient extends AbstractPlugin
 //         );
         return $this->client;
     }
-
 }

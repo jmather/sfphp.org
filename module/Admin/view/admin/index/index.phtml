@@ -1,0 +1,60 @@
+<?php
+    $this->headTitle('Administration');
+?>
+
+<h1>Administration</h1>
+
+
+<div class="container">
+    <div class="pull-right">
+        <form method="POST" action="<?= $this->url('page-create'); ?>">
+            <input type="text" name="urlIdentifier">
+            <button type="submit" class="btn btn-success">Create Page</button>
+        </form>
+    </div>
+    <h2>Pages</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Is Published
+                </th>
+                <th>
+                    URL Identifier
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Sort
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+            foreach ($this->getPages(null, false) as $page) {
+        ?>
+            <tr>
+                <td><?= ($page->getIsPublished()) ? 'yes': 'no'; ?></td>
+                <td><?= $this->escapeHtml($page->getUrlIdentifier()); ?></td>
+                <td><?= $this->escapeHtml($page->getTitle()); ?></td>
+                <td><?= $this->escapeHtml($page->getSort()); ?></td>
+                <td>
+                    <a class="btn btn-warning" href="<?= $this->url('page/edit', ['url-identifier' => $page->getUrlIdentifier()]); ?>">
+                        Edit Page
+                    </a>
+                    <a class="btn btn-danger" href="<?= $this->url('page/delete', ['url-identifier' => $page->getUrlIdentifier()]); ?>">
+                        Delete Page
+                    </a>
+                </td>
+            </tr>
+        <?php
+            }
+        ?>
+        </tbody>
+    </table>
+
+</div>

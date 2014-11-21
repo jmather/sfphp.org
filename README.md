@@ -13,4 +13,6 @@ cd sfphp.org
 php -r "readfile('https://getcomposer.org/installer');" | php
 ./composer.phar install
 cp config/autoload/local.php.dist config/autoload/local.php
+cd public
+bower install
 ```

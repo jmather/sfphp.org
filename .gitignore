@@ -9,6 +9,7 @@ local.php
 *.mo
 
 # Data
+data/sqlite.db
 data/logs/
 data/cache/
 data/sessions/
@@ -26,3 +27,5 @@ nbproject
 .project
 .settings
 config/development.config.php
+config/application.config.old
+public/bower_components

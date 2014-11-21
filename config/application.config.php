@@ -28,7 +28,11 @@ return array(
         'DoctrineDataFixtureModule',
         'Phpro\\DoctrineHydrationModule',
         'ZF\\Apigility\\Doctrine\\Server',
-        'Db'
+        'MaglMarkdown',
+        'Db',
+        'Station',
+        'ContentManagement',
+        'Admin'
     ),
     'module_listener_options' => array(
         'module_paths' => array(
