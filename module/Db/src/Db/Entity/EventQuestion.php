@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * EventQuestion
@@ -24,11 +23,10 @@ class EventQuestion
      */
     private $event;
 
-
     /**
      * Set body
      *
-     * @param string $body
+     * @param  string        $body
      * @return EventQuestion
      */
     public function setBody($body)
@@ -41,7 +39,7 @@ class EventQuestion
     /**
      * Get body
      *
-     * @return string 
+     * @return string
      */
     public function getBody()
     {
@@ -51,7 +49,7 @@ class EventQuestion
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -61,7 +59,7 @@ class EventQuestion
     /**
      * Set event
      *
-     * @param \Db\Entity\Event $event
+     * @param  \Db\Entity\Event $event
      * @return EventQuestion
      */
     public function setEvent(\Db\Entity\Event $event = null)
@@ -74,7 +72,7 @@ class EventQuestion
     /**
      * Get event
      *
-     * @return \Db\Entity\Event 
+     * @return \Db\Entity\Event
      */
     public function getEvent()
     {

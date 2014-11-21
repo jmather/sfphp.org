@@ -3,18 +3,34 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'ContentManagement\Controller\Page' => 'ContentManagement\Controller\PageController'
+            'ContentManagement\Controller\Page' => 'ContentManagement\Controller\PageController',
         ),
     ),
 
     'view_manager' => array(
         'template_path_stack' => array(
-            __DIR__ . '/../view',
+            __DIR__.'/../view',
+        ),
+    ),
+
+    'view_helpers' => array(
+        'invokables' => array(
+            'getPages' => 'ContentManagement\View\Helper\GetPages',
         ),
     ),
 
     'router' => array(
         'routes' => array(
+            'page-create' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/page-create',
+                    'defaults' => array(
+                        'controller'    => 'ContentManagement\Controller\Page',
+                        'action'        => 'create',
+                    ),
+                ),
+            ),
             'page' => array(
                 'type'    => 'Segment',
                 'options' => array(
@@ -26,16 +42,6 @@ return array(
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'create' => array(
-                        'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/create',
-                            'defaults' => array(
-                                'controller'    => 'ContentManagement\Controller\Page',
-                                'action'        => 'create',
-                            ),
-                        ),
-                    ),
                     'edit' => array(
                         'type'    => 'Segment',
                         'options' => array(
@@ -43,6 +49,16 @@ return array(
                             'defaults' => array(
                                 'controller'    => 'ContentManagement\Controller\Page',
                                 'action'        => 'edit',
+                            ),
+                        ),
+                    ),
+                    'delete' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/delete',
+                            'defaults' => array(
+                                'controller'    => 'ContentManagement\Controller\Page',
+                                'action'        => 'delete',
                             ),
                         ),
                     ),

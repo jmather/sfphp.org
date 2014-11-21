@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Sponsor
@@ -83,7 +82,7 @@ class Sponsor
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string  $name
      * @return Sponsor
      */
     public function setName($name)
@@ -96,7 +95,7 @@ class Sponsor
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -106,7 +105,7 @@ class Sponsor
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string  $description
      * @return Sponsor
      */
     public function setDescription($description)
@@ -119,7 +118,7 @@ class Sponsor
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -129,7 +128,7 @@ class Sponsor
     /**
      * Set url
      *
-     * @param string $url
+     * @param  string  $url
      * @return Sponsor
      */
     public function setUrl($url)
@@ -142,7 +141,7 @@ class Sponsor
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -152,7 +151,7 @@ class Sponsor
     /**
      * Set isSiteListed
      *
-     * @param boolean $isSiteListed
+     * @param  boolean $isSiteListed
      * @return Sponsor
      */
     public function setIsSiteListed($isSiteListed)
@@ -165,7 +164,7 @@ class Sponsor
     /**
      * Get isSiteListed
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsSiteListed()
     {
@@ -175,7 +174,7 @@ class Sponsor
     /**
      * Set logoUrl
      *
-     * @param string $logoUrl
+     * @param  string  $logoUrl
      * @return Sponsor
      */
     public function setLogoUrl($logoUrl)
@@ -188,7 +187,7 @@ class Sponsor
     /**
      * Get logoUrl
      *
-     * @return string 
+     * @return string
      */
     public function getLogoUrl()
     {
@@ -198,7 +197,7 @@ class Sponsor
     /**
      * Set contact
      *
-     * @param string $contact
+     * @param  string  $contact
      * @return Sponsor
      */
     public function setContact($contact)
@@ -211,7 +210,7 @@ class Sponsor
     /**
      * Get contact
      *
-     * @return string 
+     * @return string
      */
     public function getContact()
     {
@@ -221,7 +220,7 @@ class Sponsor
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -231,7 +230,7 @@ class Sponsor
     /**
      * Add sponsorContact
      *
-     * @param \Db\Entity\SponsorContact $sponsorContact
+     * @param  \Db\Entity\SponsorContact $sponsorContact
      * @return Sponsor
      */
     public function addSponsorContact(\Db\Entity\SponsorContact $sponsorContact)
@@ -254,7 +253,7 @@ class Sponsor
     /**
      * Get sponsorContact
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getSponsorContact()
     {
@@ -264,7 +263,7 @@ class Sponsor
     /**
      * Add sponsorLink
      *
-     * @param \Db\Entity\SponsorLink $sponsorLink
+     * @param  \Db\Entity\SponsorLink $sponsorLink
      * @return Sponsor
      */
     public function addSponsorLink(\Db\Entity\SponsorLink $sponsorLink)
@@ -287,7 +286,7 @@ class Sponsor
     /**
      * Get sponsorLink
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getSponsorLink()
     {
@@ -297,7 +296,7 @@ class Sponsor
     /**
      * Add sponsorContribution
      *
-     * @param \Db\Entity\SponsorContribution $sponsorContribution
+     * @param  \Db\Entity\SponsorContribution $sponsorContribution
      * @return Sponsor
      */
     public function addSponsorContribution(\Db\Entity\SponsorContribution $sponsorContribution)
@@ -320,7 +319,7 @@ class Sponsor
     /**
      * Get sponsorContribution
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getSponsorContribution()
     {
@@ -330,7 +329,7 @@ class Sponsor
     /**
      * Add venue
      *
-     * @param \Db\Entity\Venue $venue
+     * @param  \Db\Entity\Venue $venue
      * @return Sponsor
      */
     public function addVenue(\Db\Entity\Venue $venue)
@@ -353,7 +352,7 @@ class Sponsor
     /**
      * Get venue
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getVenue()
     {
@@ -363,7 +362,7 @@ class Sponsor
     /**
      * Set meetupGroup
      *
-     * @param \Db\Entity\MeetupGroup $meetupGroup
+     * @param  \Db\Entity\MeetupGroup $meetupGroup
      * @return Sponsor
      */
     public function setMeetupGroup(\Db\Entity\MeetupGroup $meetupGroup)
@@ -376,7 +375,7 @@ class Sponsor
     /**
      * Get meetupGroup
      *
-     * @return \Db\Entity\MeetupGroup 
+     * @return \Db\Entity\MeetupGroup
      */
     public function getMeetupGroup()
     {

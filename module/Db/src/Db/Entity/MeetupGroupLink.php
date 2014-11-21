@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * MeetupGroupLink
@@ -34,11 +33,10 @@ class MeetupGroupLink
      */
     private $meetupGroup;
 
-
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string          $name
      * @return MeetupGroupLink
      */
     public function setName($name)
@@ -51,7 +49,7 @@ class MeetupGroupLink
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -61,7 +59,7 @@ class MeetupGroupLink
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string          $description
      * @return MeetupGroupLink
      */
     public function setDescription($description)
@@ -74,7 +72,7 @@ class MeetupGroupLink
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -84,7 +82,7 @@ class MeetupGroupLink
     /**
      * Set url
      *
-     * @param string $url
+     * @param  string          $url
      * @return MeetupGroupLink
      */
     public function setUrl($url)
@@ -97,7 +95,7 @@ class MeetupGroupLink
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -107,7 +105,7 @@ class MeetupGroupLink
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -117,7 +115,7 @@ class MeetupGroupLink
     /**
      * Set meetupGroup
      *
-     * @param \Db\Entity\MeetupGroup $meetupGroup
+     * @param  \Db\Entity\MeetupGroup $meetupGroup
      * @return MeetupGroupLink
      */
     public function setMeetupGroup(\Db\Entity\MeetupGroup $meetupGroup)
@@ -130,7 +128,7 @@ class MeetupGroupLink
     /**
      * Get meetupGroup
      *
-     * @return \Db\Entity\MeetupGroup 
+     * @return \Db\Entity\MeetupGroup
      */
     public function getMeetupGroup()
     {

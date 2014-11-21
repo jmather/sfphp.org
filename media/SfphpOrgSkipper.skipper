@@ -206,6 +206,7 @@
       <field name="description" type="text" uuid="ff8d20c6-d74f-4fa3-985f-426e0513856c"/>
       <field name="isPublished" type="boolean" uuid="07846604-cb13-436a-945d-9e80bd6efe2a"/>
       <field name="updatedAt" type="datetime" uuid="aad9addf-1ef3-4ee0-b6d2-d0b86e21001d"/>
+      <field name="sort" type="integer" uuid="d5b17859-448f-40b2-a9df-ae9c737e14e1"/>
       <index name="idx_urlIdentifier">
         <index-field name="urlIdentifier"/>
       </index>

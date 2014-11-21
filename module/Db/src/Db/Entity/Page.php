@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Zend\InputFilter\Factory as InputFactory;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
@@ -31,6 +30,9 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
                 case 'urlIdentifier':
                     $this->setUrlIdentifier($value);
                     break;
+                case 'sort':
+                    $this->setSort($value);
+                    break;
                 default:
                     break;
             }
@@ -50,6 +52,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
             'description' => $this->getDescription(),
             'isPublished' => $this->getIsPublished(),
             'updatedAt' => $this->getUpdatedAt(),
+            'sort' => $this->getSort(),
         ];
     }
 
@@ -101,13 +104,22 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
         )));
 
         $inputFilter->add($factory->createInput(array(
+            'name'     => 'sort',
+            'required' => false,
+            'filters'  => array(
+            ),
+            'validators' => array(
+                array('name' => 'Int'),
+            ),
+        )));
+
+        $inputFilter->add($factory->createInput(array(
             'name' => 'isPublished',
             'required' => false,
             'filters' => array(
                 array('name' => 'Boolean'),
             ),
         )));
-
 
         return $inputFilter;
     }
@@ -142,11 +154,10 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
      */
     private $id;
 
-
     /**
      * Set urlIdentifier
      *
-     * @param string $urlIdentifier
+     * @param  string $urlIdentifier
      * @return Page
      */
     public function setUrlIdentifier($urlIdentifier)
@@ -169,7 +180,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     /**
      * Set title
      *
-     * @param string $title
+     * @param  string $title
      * @return Page
      */
     public function setTitle($title)
@@ -192,7 +203,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Page
      */
     public function setDescription($description)
@@ -215,7 +226,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     /**
      * Set isPublished
      *
-     * @param boolean $isPublished
+     * @param  boolean $isPublished
      * @return Page
      */
     public function setIsPublished($isPublished)
@@ -238,7 +249,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     /**
      * Set updatedAt
      *
-     * @param \DateTime $updatedAt
+     * @param  \DateTime $updatedAt
      * @return Page
      */
     public function setUpdatedAt($updatedAt)
@@ -266,5 +277,32 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function getId()
     {
         return $this->id;
+    }
+    /**
+     * @var integer
+     */
+    private $sort;
+
+    /**
+     * Set sort
+     *
+     * @param  integer $sort
+     * @return Page
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Get sort
+     *
+     * @return integer
+     */
+    public function getSort()
+    {
+        return $this->sort;
     }
 }

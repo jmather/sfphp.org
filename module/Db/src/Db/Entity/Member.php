@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Member
@@ -96,7 +95,7 @@ class Member
     /**
      * Set fullname
      *
-     * @param string $fullname
+     * @param  string $fullname
      * @return Member
      */
     public function setFullname($fullname)
@@ -109,7 +108,7 @@ class Member
     /**
      * Get fullname
      *
-     * @return string 
+     * @return string
      */
     public function getFullname()
     {
@@ -119,7 +118,7 @@ class Member
     /**
      * Set username
      *
-     * @param string $username
+     * @param  string $username
      * @return Member
      */
     public function setUsername($username)
@@ -132,7 +131,7 @@ class Member
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
     public function getUsername()
     {
@@ -142,7 +141,7 @@ class Member
     /**
      * Set email
      *
-     * @param string $email
+     * @param  string $email
      * @return Member
      */
     public function setEmail($email)
@@ -155,7 +154,7 @@ class Member
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -165,7 +164,7 @@ class Member
     /**
      * Set displayName
      *
-     * @param string $displayName
+     * @param  string $displayName
      * @return Member
      */
     public function setDisplayName($displayName)
@@ -178,7 +177,7 @@ class Member
     /**
      * Get displayName
      *
-     * @return string 
+     * @return string
      */
     public function getDisplayName()
     {
@@ -188,7 +187,7 @@ class Member
     /**
      * Set password
      *
-     * @param string $password
+     * @param  string $password
      * @return Member
      */
     public function setPassword($password)
@@ -201,7 +200,7 @@ class Member
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -211,7 +210,7 @@ class Member
     /**
      * Set state
      *
-     * @param integer $state
+     * @param  integer $state
      * @return Member
      */
     public function setState($state)
@@ -224,7 +223,7 @@ class Member
     /**
      * Get state
      *
-     * @return integer 
+     * @return integer
      */
     public function getState()
     {
@@ -234,7 +233,7 @@ class Member
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -244,7 +243,7 @@ class Member
     /**
      * Add presentation
      *
-     * @param \Db\Entity\Presentation $presentation
+     * @param  \Db\Entity\Presentation $presentation
      * @return Member
      */
     public function addPresentation(\Db\Entity\Presentation $presentation)
@@ -267,7 +266,7 @@ class Member
     /**
      * Get presentation
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPresentation()
     {
@@ -277,7 +276,7 @@ class Member
     /**
      * Add meetupUser
      *
-     * @param \Db\Entity\MeetupMember $meetupUser
+     * @param  \Db\Entity\MeetupMember $meetupUser
      * @return Member
      */
     public function addMeetupUser(\Db\Entity\MeetupMember $meetupUser)
@@ -300,7 +299,7 @@ class Member
     /**
      * Get meetupUser
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMeetupUser()
     {
@@ -310,7 +309,7 @@ class Member
     /**
      * Add sponsorContact
      *
-     * @param \Db\Entity\SponsorContact $sponsorContact
+     * @param  \Db\Entity\SponsorContact $sponsorContact
      * @return Member
      */
     public function addSponsorContact(\Db\Entity\SponsorContact $sponsorContact)
@@ -333,7 +332,7 @@ class Member
     /**
      * Get sponsorContact
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getSponsorContact()
     {
@@ -343,7 +342,7 @@ class Member
     /**
      * Add memberLink
      *
-     * @param \Db\Entity\MemberLink $memberLink
+     * @param  \Db\Entity\MemberLink $memberLink
      * @return Member
      */
     public function addMemberLink(\Db\Entity\MemberLink $memberLink)
@@ -366,7 +365,7 @@ class Member
     /**
      * Get memberLink
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMemberLink()
     {
@@ -376,7 +375,7 @@ class Member
     /**
      * Add meetupGroupMember
      *
-     * @param \Db\Entity\MeetupGroupMember $meetupGroupMember
+     * @param  \Db\Entity\MeetupGroupMember $meetupGroupMember
      * @return Member
      */
     public function addMeetupGroupMember(\Db\Entity\MeetupGroupMember $meetupGroupMember)
@@ -399,7 +398,7 @@ class Member
     /**
      * Get meetupGroupMember
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMeetupGroupMember()
     {
@@ -409,7 +408,7 @@ class Member
     /**
      * Add eventHost
      *
-     * @param \Db\Entity\Event $eventHost
+     * @param  \Db\Entity\Event $eventHost
      * @return Member
      */
     public function addEventHost(\Db\Entity\Event $eventHost)
@@ -432,7 +431,7 @@ class Member
     /**
      * Get eventHost
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getEventHost()
     {
@@ -442,7 +441,7 @@ class Member
     /**
      * Add role
      *
-     * @param \Db\Entity\Role $role
+     * @param  \Db\Entity\Role $role
      * @return Member
      */
     public function addRole(\Db\Entity\Role $role)
@@ -465,7 +464,7 @@ class Member
     /**
      * Get role
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRole()
     {

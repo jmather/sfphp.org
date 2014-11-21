@@ -1,5 +1,5 @@
 <?php
-namespace ContentManagement;
+namespace Admin;
 
 class Module
 {

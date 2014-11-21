@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * SponsorLink
@@ -34,11 +33,10 @@ class SponsorLink
      */
     private $sponsor;
 
-
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string      $name
      * @return SponsorLink
      */
     public function setName($name)
@@ -51,7 +49,7 @@ class SponsorLink
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -61,7 +59,7 @@ class SponsorLink
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string      $description
      * @return SponsorLink
      */
     public function setDescription($description)
@@ -74,7 +72,7 @@ class SponsorLink
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -84,7 +82,7 @@ class SponsorLink
     /**
      * Set url
      *
-     * @param string $url
+     * @param  string      $url
      * @return SponsorLink
      */
     public function setUrl($url)
@@ -97,7 +95,7 @@ class SponsorLink
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -107,7 +105,7 @@ class SponsorLink
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -117,7 +115,7 @@ class SponsorLink
     /**
      * Set sponsor
      *
-     * @param \Db\Entity\Sponsor $sponsor
+     * @param  \Db\Entity\Sponsor $sponsor
      * @return SponsorLink
      */
     public function setSponsor(\Db\Entity\Sponsor $sponsor)
@@ -130,7 +128,7 @@ class SponsorLink
     /**
      * Get sponsor
      *
-     * @return \Db\Entity\Sponsor 
+     * @return \Db\Entity\Sponsor
      */
     public function getSponsor()
     {

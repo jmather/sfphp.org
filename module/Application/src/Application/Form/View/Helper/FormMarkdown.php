@@ -48,7 +48,7 @@ class FormMarkdown extends AbstractHelper
     /**
      * Render a form <textarea> + preview element from the provided $element
      *
-     * @param  ElementInterface $element
+     * @param  ElementInterface          $element
      * @throws Exception\DomainException
      * @return string
      */

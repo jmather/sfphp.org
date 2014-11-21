@@ -31,7 +31,8 @@ return array(
         'MaglMarkdown',
         'Db',
         'Station',
-        'ContentManagement'
+        'ContentManagement',
+        'Admin'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

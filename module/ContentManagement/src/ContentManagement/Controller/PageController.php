@@ -6,12 +6,10 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Db\Entity\Page as PageEntity;
 use ContentManagement\Form\Page as PageForm;
-use ContentManagement\Form\InputFilter\Page as PageInputFilter;
 use Exception;
 
 class PageController extends AbstractActionController
 {
-
     public function indexAction()
     {
         $urlIdentifier = $this->params()->fromRoute('url-identifier');
@@ -26,16 +24,30 @@ class PageController extends AbstractActionController
 
     public function createAction()
     {
-        $urlIdentifier = $this->params()->fromRoute('url-identifier');
+        $urlIdentifier = $this->params()->fromPost('urlIdentifier');
         $objectManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+        $page = new PageEntity();
+        $inputFilter = $page->getInputFilter();
 
-        // FIXME:  Verify urlIdentifier is valid
+        $data = [
+            'urlIdentifier' => $urlIdentifier,
+            'title' => $urlIdentifier,
+            'isPublished' => false,
+            'sort' => -1,
+        ];
 
-        $page = new PageEntity;
-        $page->setUrlIdentifier($urlIdentifier);
-        $page->setTitle($urlIdentifier);
-        $page->setIsPublished(false);
+        $inputFilter->setData($data);
+        if (!$inputFilter->isValid()) {
+            throw new Exception('Invalid URL Identifier');
+        }
 
+        if ($objectManager->getRepository('Db\Entity\Page')->findOneBy([
+            'urlIdentifier' => $inputFilter->getValue('urlIdentifier'),
+        ])) {
+            throw new Exception('URL Identifier '.$inputFilter->getValue('urlIdentifier').' is already in use');
+        }
+
+        $page->exchangeArray($inputFilter->getValues());
         $objectManager->persist($page);
         $objectManager->flush();
 
@@ -52,36 +64,46 @@ class PageController extends AbstractActionController
         ]);
 
         if (!$page) {
-            throw new Exception('Page not found by url identifier ' . $urlIdentifier);
+            throw new Exception('Page not found by url identifier '.$urlIdentifier);
         }
 
-        $form = new PageForm;
+        $form = new PageForm();
         $request = $this->getRequest();
 
         if ($request->isPost()) {
             $form->setInputFilter($page->getInputFilter());
-            $data = $request->getPost()->toArray();
-            $data['urlIdentifier'] = $urlIdentifier;
 
-            $form->setData($data);
+            $form->setData($request->getPost());
 
             if ($form->isValid()) {
-                $data = $form->getData();
-                $data['urlIdentifier'] = $urlIdentifier;
-
-                $page->exchangeArray($data);
+                $page->exchangeArray($form->getData());
                 $objectManager->flush();
 
                 // Redirect to list of albums
-                return $this->redirect()->toRoute('page', ['url-identifier' => $urlIdentifier]);
-            } else {
-                print_r($form->getMessages());die('invalid');
+                return $this->redirect()->toRoute('page', ['url-identifier' => $form->getData()['urlIdentifier']]);
             }
         } else {
             $form->setData($page->getArrayCopy());
         }
 
-        return new ViewModel(['form' => $form]);
+        return new ViewModel([
+            'form' => $form,
+            'page' => $page,
+        ]);
+    }
+
+    public function deleteAction()
+    {
+        $urlIdentifier = $this->params()->fromRoute('url-identifier');
+        $objectManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+
+        $page = $objectManager->getRepository('Db\Entity\Page')->findOneBy([
+            'urlIdentifier' => $urlIdentifier,
+        ]);
+
+        $objectManager->remove($page);
+        $objectManager->flush();
+
+        $this->plugin('redirect')->toRoute('admin');
     }
 }
-

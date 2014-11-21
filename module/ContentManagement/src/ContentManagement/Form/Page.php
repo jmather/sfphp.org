@@ -13,6 +13,17 @@ class Page extends Form
         $this->setAttribute('method', 'post');
 
         $this->add(array(
+            'name' => 'urlIdentifier',
+            'attributes' => array(
+                'type'  => 'text',
+                'size' => '20',
+            ),
+            'options' => array(
+                'label' => 'URL Identifier',
+            ),
+        ));
+
+        $this->add(array(
             'name' => 'title',
             'attributes' => array(
                 'type'  => 'text',
@@ -32,6 +43,17 @@ class Page extends Form
             ),
             'options' => array(
                 'label' => 'Page Content',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'sort',
+            'attributes' => array(
+                'type'  => 'text',
+                'size' => '4',
+            ),
+            'options' => array(
+                'label' => 'Sort Order',
             ),
         ));
 
