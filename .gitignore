@@ -28,3 +28,4 @@ nbproject
 .settings
 config/development.config.php
 config/application.config.old
+public/bower_components
