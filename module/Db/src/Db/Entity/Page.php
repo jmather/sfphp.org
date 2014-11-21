@@ -102,7 +102,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
 
         $inputFilter->add($factory->createInput(array(
             'name' => 'isPublished',
-            'required' => true,
+            'required' => false,
             'filters' => array(
                 array('name' => 'Boolean'),
             ),

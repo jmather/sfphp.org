@@ -36,6 +36,20 @@ echo $this->formElementErrors()
     </div>
 </div>
 
+<div class="form-container container">
+    <div class="col-md-12">
+<?php
+echo $this->formLabel($form->get('isPublished'));
+echo $this->formCheckbox($form->get('isPublished'));
+echo $this->formElementErrors()
+    ->setMessageOpenFormat('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><ul><li>')
+    ->setMessageSeparatorString('</li><li>')
+    ->setMessageCloseString('</li></ul></div>')
+    ->render($form->get('isPublished'));
+?>
+    </div>
+</div>
+
 <?php
 echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();

@@ -2,6 +2,7 @@
 namespace ContentManagement\Form;
 
 use Zend\Form\Form;
+use Zend\Form\Element;
 
 class Page extends Form
 {
@@ -10,6 +11,7 @@ class Page extends Form
         // we want to ignore the name passed
         parent::__construct('page');
         $this->setAttribute('method', 'post');
+
         $this->add(array(
             'name' => 'title',
             'attributes' => array(
@@ -20,6 +22,7 @@ class Page extends Form
                 'label' => 'Title',
             ),
         ));
+
         $this->add(array(
             'name' => 'description',
             'attributes' => array(
@@ -31,6 +34,15 @@ class Page extends Form
                 'label' => 'Page Content',
             ),
         ));
+
+        $checkbox = new Element\Checkbox('isPublished');
+        $checkbox->setLabel('Is this page published?');
+        $checkbox->setUseHiddenElement(true);
+        $checkbox->setCheckedValue("1");
+        $checkbox->setUncheckedValue("0");
+
+        $this->add($checkbox);
+
         $this->add(array(
             'name' => 'submit',
             'attributes' => array(

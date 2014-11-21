@@ -28,6 +28,7 @@ return array(
         'DoctrineDataFixtureModule',
         'Phpro\\DoctrineHydrationModule',
         'ZF\\Apigility\\Doctrine\\Server',
+        'MaglMarkdown',
         'Db',
         'Station',
         'ContentManagement'

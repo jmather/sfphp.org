@@ -60,7 +60,10 @@ class PageController extends AbstractActionController
 
         if ($request->isPost()) {
             $form->setInputFilter($page->getInputFilter());
-            $form->setData($request->getPost());
+            $data = $request->getPost()->toArray();
+            $data['urlIdentifier'] = $urlIdentifier;
+
+            $form->setData($data);
 
             if ($form->isValid()) {
                 $data = $form->getData();
@@ -71,6 +74,8 @@ class PageController extends AbstractActionController
 
                 // Redirect to list of albums
                 return $this->redirect()->toRoute('page', ['url-identifier' => $urlIdentifier]);
+            } else {
+                print_r($form->getMessages());die('invalid');
             }
         } else {
             $form->setData($page->getArrayCopy());
