@@ -68,7 +68,13 @@ class FormMarkdown extends AbstractHelper
         $escapeHtml         = $this->getEscapeHtmlHelper();
 
         return sprintf(
-            '<ul class="nav nav-tabs" role="tablist">
+            '
+            <script>
+                $(function() {
+                    $("#%s-preview").html(markdown.toHTML($(\'[name="%s"]\').val()));
+                });
+            </script>
+            <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
                     <a data-toggle="tab" href="#%s-content"><strong>%s</strong></a>
                 </li>
@@ -85,6 +91,8 @@ class FormMarkdown extends AbstractHelper
                 </div>
             </div>
             ',
+            $name,
+            $name,
             $name,
             $element->getLabel(),
             $name,
