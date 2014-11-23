@@ -3,18 +3,12 @@
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 use Stuki\OAuth2\Client;
 use Zend\Session\Container;
-use Zend\Authentication\AuthenticationService;
+use Zend\Authentication\Result;
 
-class MemberController extends AbstractActionController
+class AuthenticationController extends AbstractActionController
 {
-    public function indexAction()
-    {
-        return new ViewModel();
-    }
-
     public function logoutAction()
     {
         session_unset();
@@ -23,7 +17,7 @@ class MemberController extends AbstractActionController
         return $this->plugin('redirect')->toRoute('home');
     }
 
-    public function LoginAction()
+    public function indexAction()
     {
         $config = $this->getServiceLocator()->get('Config');
 
@@ -44,7 +38,7 @@ class MemberController extends AbstractActionController
                     'code' => $_GET['code'],
                 ]);
             } catch (Client\Exception\IDPException $e) {
-                // Handle error from oauth2 server
+                return $this->plugin('redirect')->toRoute('authentication/error');
             }
 
             // Store the access and refresh token for future use
@@ -52,12 +46,24 @@ class MemberController extends AbstractActionController
             $container->accessToken = $token->accessToken;
             $container->refreshToken = $token->refreshToken;
 
-            $auth = new AuthenticationService();
-            $etsyAuthAdapter = $this->getServiceLocator()->get('MeetupAuthAdapter');
-            $result = $auth->authenticate($etsyAuthAdapter);
+            $result = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService')->authenticate();
 
-            // Redirect to save session
-            return $this->plugin('redirect')->toRoute('member');
+            switch($result->getCode()) {
+                case Result::FAILURE:
+                    return $this->plugin('redirect')->toRoute('authentication/error');
+                    break;
+                case Result::SUCCESS:
+                    return $this->plugin('redirect')->toRoute('member');
+                    break;
+                default:
+                    throw new \Exception('An unexpected authentication result was returned');
+                    break;
+            }
         }
+    }
+
+    public function errorAction()
+    {
+        return [];
     }
 }

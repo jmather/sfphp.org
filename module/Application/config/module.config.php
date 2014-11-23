@@ -21,37 +21,37 @@ return array(
                     ),
                 ),
             ),
-            'member' => array(
+            'authentication' => array(
                 'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/member',
+                    'route'    => '/authentication',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Member',
+                        'controller'    => 'Authentication',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'login' => array(
-                        'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/login',
-                            'defaults' => array(
-                                '__NAMESPACE__' => 'Application\Controller',
-                                'controller'    => 'Member',
-                                'action'        => 'login',
-                            ),
-                        ),
-                    ),
                     'logout' => array(
                         'type'    => 'Segment',
                         'options' => array(
                             'route'    => '/logout',
                             'defaults' => array(
                                 '__NAMESPACE__' => 'Application\Controller',
-                                'controller'    => 'Member',
+                                'controller'    => 'Authentication',
                                 'action'        => 'logout',
+                            ),
+                        ),
+                    ),
+                    'error' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/error',
+                            'defaults' => array(
+                                '__NAMESPACE__' => 'Application\Controller',
+                                'controller'    => 'Authentication',
+                                'action'        => 'error',
                             ),
                         ),
                     ),
@@ -61,7 +61,6 @@ return array(
     ),
     'service_manager' => array(
         'invokables' => array(
-            'Zend\Authentication\AuthenticationService' => 'Zend\Authentication\AuthenticationService',
             'Zend\Session\SessionManager' => 'Zend\Session\SessionManager',
         ),
         'abstract_factories' => array(
@@ -85,7 +84,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Application\Controller\Member' => 'Application\Controller\MemberController',
+            'Application\Controller\Authentication' => 'Application\Controller\AuthenticationController',
         ),
     ),
     'controller_plugins' => array(

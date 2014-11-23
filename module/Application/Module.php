@@ -14,6 +14,8 @@ use Zend\Mvc\MvcEvent;
 use Zend\ServiceManager\ServiceManager;
 use Application\Service\MeetupClient;
 use Zend\Session\Container;
+use Zend\Authentication\AuthenticationService;
+use Application\Authentication\Adapter\Meetup as MeetupAdapter;
 use Exception;
 
 class Module
@@ -70,12 +72,21 @@ class Module
                     return $provider;
                 },
 
-                'MeetupAuthAdapter' => function (ServiceManager $serviceManager) {
-                    $adapter = new \Application\Authentication\Adapter\Meetup();
+                'Zend\Authentication\AuthenticationService' => function (ServiceManager $serviceManager) {
+                    $adapter = new MeetupAdapter();
                     $adapter->setObjectManager($serviceManager->get('doctrine.entitymanager.orm_default'));
-                    $adapter->setMeetupClient($serviceManager->get('MeetupClient'));
 
-                    return $adapter;
+                    try {
+                        $client = $serviceManager->get('MeetupClient');
+                        $adapter->setMeetupClient($client);
+                    } catch (Exception $e) {
+                        #  don't set client if session does not contain oauth2
+                    }
+
+                    $authentication = new AuthenticationService();
+                    $authentication->setAdapter($adapter);
+
+                    return $authentication;
                 },
             ),
         );

@@ -23,7 +23,7 @@ $ormParams = [
 $meetup = [
     'key' => 'keyhere',
     'secret' => 'ereh terces',
-    'redirect' => 'http://dev-tomhanderson.sfphp.org/member/login',
+    'redirect' => 'http://dev-tomhanderson.sfphp.org/authentication',
 ];
 
 /** -----End User Edit-------------------------------------- **/

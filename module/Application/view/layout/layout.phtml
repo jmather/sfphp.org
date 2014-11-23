@@ -44,6 +44,7 @@
             ->appendFile($this->basePath() . '/bower_components/angular-encode-uri/dist/angular-encode-uri.min.js')
             ->appendFile($this->basePath() . '/bower_components/markdown/lib/markdown.js')
             ;
+
         ?>
 
     </head>
@@ -70,14 +71,14 @@
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="user-drop" role="menu">
-                                <li role="menuitem"><a href="/member/profile">Profile</a></li>
-                                <li role="menuitem"><a href="<?= $this->url('member/logout'); ?>">Logout</a></li>
+                                <li role="menuitem"><a href="<?= $this->url('member'); ?>">Profile</a></li>
+                                <li role="menuitem"><a href="<?= $this->url('authentication/logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
                         <?php
                         } else {
                         ?>
-                            <li><a href="<?= $this->url('member/login') ?>">Login</a></li>
+                            <li><a href="<?= $this->url('authentication') ?>">Login</a></li>
                         <?php
                         }
                         ?>
