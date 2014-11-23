@@ -2,11 +2,12 @@
 
 namespace Db\Entity;
 
+use BjyAuthorize\Acl\HierarchicalRoleInterface;
 
 /**
  * Role
  */
-class Role
+class Role implements HierarchicalRoleInterface
 {
     /**
      * @var string

@@ -39,6 +39,13 @@ class Meetup implements AdapterInterface
             $member->setId($self['id']);
             $member->setCreatedAt(new \DateTime());
             $this->getObjectManager()->persist($member);
+
+            $userRole = $this->getObjectManager()->getRepository('Db\Entity\Role')->findOneBy([
+                'roleId' => 'user'
+            ]);
+
+            $userRole->addMember($member);
+            $member->addRole($userRole);
         }
 
         $member->exchangeArray($self);

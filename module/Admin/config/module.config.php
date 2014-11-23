@@ -28,10 +28,10 @@ return array(
                     'placeholder' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/create',
+                            'route'    => '/placeholder',
                             'defaults' => array(
                                 'controller'    => 'Admin\Controller\Index',
-                                'action'        => 'create',
+                                'action'        => 'placeholder',
                             ),
                         ),
                     ),

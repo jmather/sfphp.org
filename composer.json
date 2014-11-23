@@ -43,7 +43,8 @@
         "hounddog/doctrine-data-fixture-module": "0.0.*",
         "dms/meetup-api-client": "1.0.x-dev",
         "maglnet/magl-markdown": "~1.1",
-        "stuki/oauth2-simple-client": "dev-master"
+        "stuki/oauth2-simple-client": "dev-master",
+        "bjyoungblood/bjy-authorize": "1.4.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*",

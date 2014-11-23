@@ -26,6 +26,9 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
 
+        $strategy = $e->getApplication()->getServiceManager()->get('BjyAuthorizeViewRedirectionStrategy');
+        $strategy->setRedirectRoute('authentication');
+
         $session = $e->getApplication()
             ->getServiceManager()
             ->get('Zend\Session\SessionManager');

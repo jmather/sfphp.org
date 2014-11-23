@@ -21,7 +21,7 @@ class Meetup implements ProviderInterface
             $user->setLastRequestAt(new \DateTime());
             $this->getObjectManager()->flush();
 
-            foreach ($user->getRoles() as $role) {
+            foreach ($user->getRole() as $role) {
                 $return[] = $role->getRoleId();
             }
         }
