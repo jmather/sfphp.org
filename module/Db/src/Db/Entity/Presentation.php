@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-
 /**
  * Presentation
  */

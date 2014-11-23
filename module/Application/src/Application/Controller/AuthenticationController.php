@@ -48,7 +48,7 @@ class AuthenticationController extends AbstractActionController
 
             $result = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService')->authenticate();
 
-            switch($result->getCode()) {
+            switch ($result->getCode()) {
                 case Result::FAILURE:
                     return $this->plugin('redirect')->toRoute('authentication/error');
                     break;

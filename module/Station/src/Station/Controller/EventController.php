@@ -7,12 +7,8 @@ use Zend\View\Model\ViewModel;
 
 class EventController extends AbstractActionController
 {
-
     public function indexAction()
     {
         return new ViewModel();
     }
-
-
 }
-
