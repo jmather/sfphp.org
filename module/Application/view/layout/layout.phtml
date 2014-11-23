@@ -60,6 +60,29 @@
                 </div>
 
                 <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav dropdown-menu-right pull-right">
+                        <?php
+                        if ($this->identity()) {
+                        ?>
+                        <li id="user-menu" class="dropdown">
+                            <a id="user-drop" class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">
+                                <?= $this->escapeHtml($this->identity()->getName()); ?>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="user-drop" role="menu">
+                                <li role="menuitem"><a href="/member/profile">Profile</a></li>
+                                <li role="menuitem"><a href="<?= $this->url('member/logout'); ?>">Logout</a></li>
+                            </ul>
+                        </li>
+                        <?php
+                        } else {
+                        ?>
+                            <li><a href="<?= $this->url('member/login') ?>">Login</a></li>
+                        <?php
+                        }
+                        ?>
+                    </ul>
+
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
                     <?php
@@ -71,12 +94,6 @@
                     }
                     ?>
                         <li><a href="<?= $this->url('admin') ?>">Administration</a></li>
-
-                        <?php if ($this->identity()) { ?>
-                            <li><a href="<?= $this->url('member/logout') ?>">Logout</a></li>
-                        <?php } else { ?>
-                            <li><a href="<?= $this->url('member/login') ?>">Login</a></li>
-                        <?php } ?>
                     </ul>
 
                 </div><!--/.nav-collapse -->
