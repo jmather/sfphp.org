@@ -15,7 +15,6 @@ class Meetup implements ProviderInterface
 
         $return = ['guest'];
         if ($authService->hasIdentity()) {
-
             $user = $this->getObjectManager()->getRepository('Db\Entity\Member')->find($authService->getIdentity()->getId());
 
             // Update user last Request At anytime roles are loaded

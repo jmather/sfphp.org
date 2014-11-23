@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Zend\Stdlib\ArraySerializableInterface;
 use DateTime;
 
@@ -178,7 +177,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string $name
      * @return Member
      */
     public function setName($name)
@@ -201,7 +200,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set status
      *
-     * @param string $status
+     * @param  string $status
      * @return Member
      */
     public function setStatus($status)
@@ -224,7 +223,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set state
      *
-     * @param string $state
+     * @param  string $state
      * @return Member
      */
     public function setState($state)
@@ -247,7 +246,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set language
      *
-     * @param string $language
+     * @param  string $language
      * @return Member
      */
     public function setLanguage($language)
@@ -270,7 +269,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set city
      *
-     * @param string $city
+     * @param  string $city
      * @return Member
      */
     public function setCity($city)
@@ -293,7 +292,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set country
      *
-     * @param string $country
+     * @param  string $country
      * @return Member
      */
     public function setCountry($country)
@@ -316,7 +315,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set visitedAt
      *
-     * @param \DateTime $visitedAt
+     * @param  \DateTime $visitedAt
      * @return Member
      */
     public function setVisitedAt($visitedAt)
@@ -339,7 +338,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set joinedAt
      *
-     * @param \DateTime $joinedAt
+     * @param  \DateTime $joinedAt
      * @return Member
      */
     public function setJoinedAt($joinedAt)
@@ -362,7 +361,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
+     * @param  \DateTime $createdAt
      * @return Member
      */
     public function setCreatedAt($createdAt)
@@ -385,7 +384,7 @@ class Member implements ArraySerializableInterface
     /**
      * Set id
      *
-     * @param integer $id
+     * @param  integer $id
      * @return Member
      */
     public function setId($id)
@@ -408,7 +407,7 @@ class Member implements ArraySerializableInterface
     /**
      * Add presentation
      *
-     * @param \Db\Entity\Presentation $presentation
+     * @param  \Db\Entity\Presentation $presentation
      * @return Member
      */
     public function addPresentation(\Db\Entity\Presentation $presentation)
@@ -441,7 +440,7 @@ class Member implements ArraySerializableInterface
     /**
      * Add meetupUser
      *
-     * @param \Db\Entity\MeetupMember $meetupUser
+     * @param  \Db\Entity\MeetupMember $meetupUser
      * @return Member
      */
     public function addMeetupUser(\Db\Entity\MeetupMember $meetupUser)
@@ -474,7 +473,7 @@ class Member implements ArraySerializableInterface
     /**
      * Add sponsorContact
      *
-     * @param \Db\Entity\SponsorContact $sponsorContact
+     * @param  \Db\Entity\SponsorContact $sponsorContact
      * @return Member
      */
     public function addSponsorContact(\Db\Entity\SponsorContact $sponsorContact)
@@ -507,7 +506,7 @@ class Member implements ArraySerializableInterface
     /**
      * Add memberLink
      *
-     * @param \Db\Entity\MemberLink $memberLink
+     * @param  \Db\Entity\MemberLink $memberLink
      * @return Member
      */
     public function addMemberLink(\Db\Entity\MemberLink $memberLink)
@@ -540,7 +539,7 @@ class Member implements ArraySerializableInterface
     /**
      * Add meetupGroupMember
      *
-     * @param \Db\Entity\MeetupGroupMember $meetupGroupMember
+     * @param  \Db\Entity\MeetupGroupMember $meetupGroupMember
      * @return Member
      */
     public function addMeetupGroupMember(\Db\Entity\MeetupGroupMember $meetupGroupMember)
@@ -573,7 +572,7 @@ class Member implements ArraySerializableInterface
     /**
      * Add eventHost
      *
-     * @param \Db\Entity\Event $eventHost
+     * @param  \Db\Entity\Event $eventHost
      * @return Member
      */
     public function addEventHost(\Db\Entity\Event $eventHost)
@@ -606,7 +605,7 @@ class Member implements ArraySerializableInterface
     /**
      * Add role
      *
-     * @param \Db\Entity\Role $role
+     * @param  \Db\Entity\Role $role
      * @return Member
      */
     public function addRole(\Db\Entity\Role $role)
@@ -640,11 +639,10 @@ class Member implements ArraySerializableInterface
      */
     private $updatedAt;
 
-
     /**
      * Set updatedAt
      *
-     * @param \DateTime $updatedAt
+     * @param  \DateTime $updatedAt
      * @return Member
      */
     public function setUpdatedAt($updatedAt)
@@ -668,11 +666,10 @@ class Member implements ArraySerializableInterface
      */
     private $lastRequestAt;
 
-
     /**
      * Set lastRequestAt
      *
-     * @param \DateTime $lastRequestAt
+     * @param  \DateTime $lastRequestAt
      * @return Member
      */
     public function setLastRequestAt($lastRequestAt)
@@ -685,7 +682,7 @@ class Member implements ArraySerializableInterface
     /**
      * Get lastRequestAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getLastRequestAt()
     {

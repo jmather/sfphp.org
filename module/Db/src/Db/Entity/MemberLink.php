@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * MemberLink
@@ -34,11 +33,10 @@ class MemberLink
      */
     private $member;
 
-
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string     $name
      * @return MemberLink
      */
     public function setName($name)
@@ -51,7 +49,7 @@ class MemberLink
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -61,7 +59,7 @@ class MemberLink
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string     $description
      * @return MemberLink
      */
     public function setDescription($description)
@@ -74,7 +72,7 @@ class MemberLink
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -84,7 +82,7 @@ class MemberLink
     /**
      * Set url
      *
-     * @param string $url
+     * @param  string     $url
      * @return MemberLink
      */
     public function setUrl($url)
@@ -97,7 +95,7 @@ class MemberLink
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -107,7 +105,7 @@ class MemberLink
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -117,7 +115,7 @@ class MemberLink
     /**
      * Set member
      *
-     * @param \Db\Entity\Member $member
+     * @param  \Db\Entity\Member $member
      * @return MemberLink
      */
     public function setMember(\Db\Entity\Member $member)
@@ -130,7 +128,7 @@ class MemberLink
     /**
      * Get member
      *
-     * @return \Db\Entity\Member 
+     * @return \Db\Entity\Member
      */
     public function getMember()
     {

@@ -7,7 +7,6 @@ use Guzzle\Common\Collection;
 
 class MeetupClient extends AbstractMeetupClient
 {
-
     /**
      * Returns the default values for incoming configuration parameters
      *
@@ -29,14 +28,14 @@ class MeetupClient extends AbstractMeetupClient
     public static function getRequiredParameters()
     {
         return array(
-            'access_token'
+            'access_token',
         );
     }
 
     /**
      * Factory Method to build new Client
      *
-     * @param array $config
+     * @param  array             $config
      * @return MeetupOAuthClient
      */
     public static function factory($config = array())
@@ -53,7 +52,7 @@ class MeetupClient extends AbstractMeetupClient
     /**
      * Builds array of configurations into final config
      *
-     * @param array $config
+     * @param  array      $config
      * @return Collection
      */
     public static function buildConfig($config = array())
@@ -64,7 +63,7 @@ class MeetupClient extends AbstractMeetupClient
 
         $standardHeaders = array(
             'Accept-Charset' => 'utf-8',
-            'Authorization' => 'Bearer ' . $config['access_token'],
+            'Authorization' => 'Bearer '.$config['access_token'],
         );
 
         $requestOptions = array(

@@ -24,7 +24,7 @@ class Meetup implements AdapterInterface, ServiceLocatorAwareInterface
         $member = $this->getObjectManager()->getRepository('Db\Entity\Member')->find($self['id']);
 
         if (!$member) {
-            $member = new Entity\Member;
+            $member = new Entity\Member();
             $member->setId($self['id']);
             $member->setCreatedAt(new \DateTime());
             $this->getObjectManager()->persist($member);

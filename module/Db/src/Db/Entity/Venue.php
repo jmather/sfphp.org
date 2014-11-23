@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Venue
@@ -106,7 +105,7 @@ class Venue
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string $name
      * @return Venue
      */
     public function setName($name)
@@ -119,7 +118,7 @@ class Venue
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -129,7 +128,7 @@ class Venue
     /**
      * Set address1
      *
-     * @param string $address1
+     * @param  string $address1
      * @return Venue
      */
     public function setAddress1($address1)
@@ -142,7 +141,7 @@ class Venue
     /**
      * Get address1
      *
-     * @return string 
+     * @return string
      */
     public function getAddress1()
     {
@@ -152,7 +151,7 @@ class Venue
     /**
      * Set address2
      *
-     * @param string $address2
+     * @param  string $address2
      * @return Venue
      */
     public function setAddress2($address2)
@@ -165,7 +164,7 @@ class Venue
     /**
      * Get address2
      *
-     * @return string 
+     * @return string
      */
     public function getAddress2()
     {
@@ -175,7 +174,7 @@ class Venue
     /**
      * Set address3
      *
-     * @param string $address3
+     * @param  string $address3
      * @return Venue
      */
     public function setAddress3($address3)
@@ -188,7 +187,7 @@ class Venue
     /**
      * Get address3
      *
-     * @return string 
+     * @return string
      */
     public function getAddress3()
     {
@@ -198,7 +197,7 @@ class Venue
     /**
      * Set cityStateCountry
      *
-     * @param string $cityStateCountry
+     * @param  string $cityStateCountry
      * @return Venue
      */
     public function setCityStateCountry($cityStateCountry)
@@ -211,7 +210,7 @@ class Venue
     /**
      * Get cityStateCountry
      *
-     * @return string 
+     * @return string
      */
     public function getCityStateCountry()
     {
@@ -221,7 +220,7 @@ class Venue
     /**
      * Set latLon
      *
-     * @param string $latLon
+     * @param  string $latLon
      * @return Venue
      */
     public function setLatLon($latLon)
@@ -234,7 +233,7 @@ class Venue
     /**
      * Get latLon
      *
-     * @return string 
+     * @return string
      */
     public function getLatLon()
     {
@@ -244,7 +243,7 @@ class Venue
     /**
      * Set phone
      *
-     * @param string $phone
+     * @param  string $phone
      * @return Venue
      */
     public function setPhone($phone)
@@ -257,7 +256,7 @@ class Venue
     /**
      * Get phone
      *
-     * @return string 
+     * @return string
      */
     public function getPhone()
     {
@@ -267,7 +266,7 @@ class Venue
     /**
      * Set zip
      *
-     * @param string $zip
+     * @param  string $zip
      * @return Venue
      */
     public function setZip($zip)
@@ -280,7 +279,7 @@ class Venue
     /**
      * Get zip
      *
-     * @return string 
+     * @return string
      */
     public function getZip()
     {
@@ -290,7 +289,7 @@ class Venue
     /**
      * Set capacity
      *
-     * @param integer $capacity
+     * @param  integer $capacity
      * @return Venue
      */
     public function setCapacity($capacity)
@@ -303,7 +302,7 @@ class Venue
     /**
      * Get capacity
      *
-     * @return integer 
+     * @return integer
      */
     public function getCapacity()
     {
@@ -313,7 +312,7 @@ class Venue
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string $description
      * @return Venue
      */
     public function setDescription($description)
@@ -326,7 +325,7 @@ class Venue
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -336,7 +335,7 @@ class Venue
     /**
      * Set contact
      *
-     * @param string $contact
+     * @param  string $contact
      * @return Venue
      */
     public function setContact($contact)
@@ -349,7 +348,7 @@ class Venue
     /**
      * Get contact
      *
-     * @return string 
+     * @return string
      */
     public function getContact()
     {
@@ -359,7 +358,7 @@ class Venue
     /**
      * Set security
      *
-     * @param string $security
+     * @param  string $security
      * @return Venue
      */
     public function setSecurity($security)
@@ -372,7 +371,7 @@ class Venue
     /**
      * Get security
      *
-     * @return string 
+     * @return string
      */
     public function getSecurity()
     {
@@ -382,7 +381,7 @@ class Venue
     /**
      * Set equipment
      *
-     * @param string $equipment
+     * @param  string $equipment
      * @return Venue
      */
     public function setEquipment($equipment)
@@ -395,7 +394,7 @@ class Venue
     /**
      * Get equipment
      *
-     * @return string 
+     * @return string
      */
     public function getEquipment()
     {
@@ -405,7 +404,7 @@ class Venue
     /**
      * Set id
      *
-     * @param integer $id
+     * @param  integer $id
      * @return Venue
      */
     public function setId($id)
@@ -418,7 +417,7 @@ class Venue
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -428,7 +427,7 @@ class Venue
     /**
      * Add event
      *
-     * @param \Db\Entity\Event $event
+     * @param  \Db\Entity\Event $event
      * @return Venue
      */
     public function addEvent(\Db\Entity\Event $event)
@@ -451,7 +450,7 @@ class Venue
     /**
      * Get event
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getEvent()
     {
@@ -461,7 +460,7 @@ class Venue
     /**
      * Add venueQuestion
      *
-     * @param \Db\Entity\VenueQuestion $venueQuestion
+     * @param  \Db\Entity\VenueQuestion $venueQuestion
      * @return Venue
      */
     public function addVenueQuestion(\Db\Entity\VenueQuestion $venueQuestion)
@@ -484,7 +483,7 @@ class Venue
     /**
      * Get venueQuestion
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getVenueQuestion()
     {
@@ -494,7 +493,7 @@ class Venue
     /**
      * Set sponsor
      *
-     * @param \Db\Entity\Sponsor $sponsor
+     * @param  \Db\Entity\Sponsor $sponsor
      * @return Venue
      */
     public function setSponsor(\Db\Entity\Sponsor $sponsor)
@@ -507,7 +506,7 @@ class Venue
     /**
      * Get sponsor
      *
-     * @return \Db\Entity\Sponsor 
+     * @return \Db\Entity\Sponsor
      */
     public function getSponsor()
     {

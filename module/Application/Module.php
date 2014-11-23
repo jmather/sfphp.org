@@ -45,8 +45,7 @@ class Module
     {
         return array(
             'factories' => array(
-                'MeetupClient' => function(ServiceManager $serviceManager)
-                {
+                'MeetupClient' => function (ServiceManager $serviceManager) {
                     $container = new Container('oauth2');
                     if (isset($container->accessToken)) {
                         $accessToken = $container->accessToken;
@@ -59,16 +58,14 @@ class Module
                     return $client;
                 },
 
-                'MeetupProviderIdentity' => function(ServiceManager $serviceManager)
-                {
+                'MeetupProviderIdentity' => function (ServiceManager $serviceManager) {
                     $provider = new \Application\Provider\Identity\Meetup();
                     $provider->setObjectManager($serviceManager->get('doctrine.entitymanager.orm_default'));
 
                     return $provider;
                 },
 
-                'MeetupAuthAdapter' => function(ServiceManager $serviceManager)
-                {
+                'MeetupAuthAdapter' => function (ServiceManager $serviceManager) {
                     $adapter = new \Application\Authentication\Adapter\Meetup();
                     $adapter->setObjectManager($serviceManager->get('doctrine.entitymanager.orm_default'));
                     $adapter->setServiceLocator($serviceManager);

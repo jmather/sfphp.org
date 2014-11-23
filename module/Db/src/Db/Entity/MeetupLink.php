@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * MeetupLink
@@ -34,11 +33,10 @@ class MeetupLink
      */
     private $event;
 
-
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string     $name
      * @return MeetupLink
      */
     public function setName($name)
@@ -51,7 +49,7 @@ class MeetupLink
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -61,7 +59,7 @@ class MeetupLink
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string     $description
      * @return MeetupLink
      */
     public function setDescription($description)
@@ -74,7 +72,7 @@ class MeetupLink
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -84,7 +82,7 @@ class MeetupLink
     /**
      * Set url
      *
-     * @param string $url
+     * @param  string     $url
      * @return MeetupLink
      */
     public function setUrl($url)
@@ -97,7 +95,7 @@ class MeetupLink
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -107,7 +105,7 @@ class MeetupLink
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -117,7 +115,7 @@ class MeetupLink
     /**
      * Set event
      *
-     * @param \Db\Entity\Event $event
+     * @param  \Db\Entity\Event $event
      * @return MeetupLink
      */
     public function setEvent(\Db\Entity\Event $event)
@@ -130,7 +128,7 @@ class MeetupLink
     /**
      * Get event
      *
-     * @return \Db\Entity\Event 
+     * @return \Db\Entity\Event
      */
     public function getEvent()
     {

@@ -2,7 +2,6 @@
 
 namespace Db\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * PresentationLink
@@ -34,11 +33,10 @@ class PresentationLink
      */
     private $presentation;
 
-
     /**
      * Set name
      *
-     * @param string $name
+     * @param  string           $name
      * @return PresentationLink
      */
     public function setName($name)
@@ -51,7 +49,7 @@ class PresentationLink
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -61,7 +59,7 @@ class PresentationLink
     /**
      * Set description
      *
-     * @param string $description
+     * @param  string           $description
      * @return PresentationLink
      */
     public function setDescription($description)
@@ -74,7 +72,7 @@ class PresentationLink
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -84,7 +82,7 @@ class PresentationLink
     /**
      * Set url
      *
-     * @param string $url
+     * @param  string           $url
      * @return PresentationLink
      */
     public function setUrl($url)
@@ -97,7 +95,7 @@ class PresentationLink
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -107,7 +105,7 @@ class PresentationLink
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -117,7 +115,7 @@ class PresentationLink
     /**
      * Set presentation
      *
-     * @param \Db\Entity\Presentation $presentation
+     * @param  \Db\Entity\Presentation $presentation
      * @return PresentationLink
      */
     public function setPresentation(\Db\Entity\Presentation $presentation)
@@ -130,7 +128,7 @@ class PresentationLink
     /**
      * Get presentation
      *
-     * @return \Db\Entity\Presentation 
+     * @return \Db\Entity\Presentation
      */
     public function getPresentation()
     {

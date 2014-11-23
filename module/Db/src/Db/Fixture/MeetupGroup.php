@@ -1,6 +1,6 @@
 <?php
 
-namespace Blitzy\Fixture;
+namespace Db\Fixture;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;

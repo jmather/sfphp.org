@@ -1,5 +1,6 @@
 <?php
 namespace Db\Entity;
+
 use Zend\InputFilter\Factory as InputFactory;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
@@ -35,6 +36,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
             }
         }
         $this->setUpdatedAt(new DateTime());
+
         return $this;
     }
     public function getArrayCopy()
@@ -107,6 +109,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
                 array('name' => 'Boolean'),
             ),
         )));
+
         return $inputFilter;
     }
     /**
@@ -142,6 +145,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setUrlIdentifier($urlIdentifier)
     {
         $this->urlIdentifier = $urlIdentifier;
+
         return $this;
     }
     /**
@@ -162,6 +166,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
     /**
@@ -182,6 +187,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
     /**
@@ -202,6 +208,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setIsPublished($isPublished)
     {
         $this->isPublished = $isPublished;
+
         return $this;
     }
     /**
@@ -222,6 +229,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
+
         return $this;
     }
     /**
@@ -255,6 +263,7 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setSort($sort)
     {
         $this->sort = $sort;
+
         return $this;
     }
     /**

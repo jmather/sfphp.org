@@ -7,7 +7,6 @@ use Zend\View\Model\ViewModel;
 use Stuki\OAuth2\Client;
 use Zend\Session\Container;
 use Zend\Authentication\AuthenticationService;
-use Db\Entity;
 
 class MemberController extends AbstractActionController
 {
@@ -34,7 +33,7 @@ class MemberController extends AbstractActionController
             'redirectUri' => $config['meetup']['redirect'],
         ));
 
-        if ( ! $this->params()->fromQuery('code')) {
+        if (! $this->params()->fromQuery('code')) {
             // No authorization code; send user to get one
             // Some providers support and/or require an application state token
             return $this->plugin('redirect')->toUrl($provider->getAuthorizationUrl(array('state' => 'token')));
