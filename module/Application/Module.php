@@ -23,6 +23,11 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        $session = $e->getApplication()
+            ->getServiceManager()
+            ->get('Zend\Session\SessionManager');
+        $session->start();
     }
 
     public function getConfig()
@@ -68,7 +73,7 @@ class Module
                 'MeetupAuthAdapter' => function (ServiceManager $serviceManager) {
                     $adapter = new \Application\Authentication\Adapter\Meetup();
                     $adapter->setObjectManager($serviceManager->get('doctrine.entitymanager.orm_default'));
-                    $adapter->setServiceLocator($serviceManager);
+                    $adapter->setMeetupClient($serviceManager->get('MeetupClient'));
 
                     return $adapter;
                 },

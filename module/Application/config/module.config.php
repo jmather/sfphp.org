@@ -44,7 +44,7 @@ return array(
                             ),
                         ),
                     ),
-                    'update' => array(
+                    'logout' => array(
                         'type'    => 'Segment',
                         'options' => array(
                             'route'    => '/logout',
@@ -60,6 +60,10 @@ return array(
         ),
     ),
     'service_manager' => array(
+        'invokables' => array(
+            'Zend\Authentication\AuthenticationService' => 'Zend\Authentication\AuthenticationService',
+            'Zend\Session\SessionManager' => 'Zend\Session\SessionManager',
+        ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',

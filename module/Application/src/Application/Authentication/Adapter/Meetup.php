@@ -4,22 +4,33 @@ namespace Application\Authentication\Adapter;
 
 use Zend\Authentication\Result;
 use Zend\Authentication\Adapter\AdapterInterface;
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
+use Application\Service\MeetupClient;
 use Db\Entity;
 
-class Meetup implements AdapterInterface, ServiceLocatorAwareInterface
+class Meetup implements AdapterInterface
 {
     use \DoctrineModule\Persistence\ProvidesObjectManager;
-    use \Zend\ServiceManager\ServiceLocatorAwareTrait;
+
+    private $meetupClient;
+
+    public function getMeetupClient()
+    {
+        return $this->meetupClient;
+    }
+
+    public function setMeetupClient(MeetupClient $client)
+    {
+        $this->meetupClient = $client;
+
+        return $this;
+    }
 
     public function authenticate()
     {
-        $meetupClient = $this->getServiceLocator()->get('MeetupClient');
-
         try {
-            $self = $meetupClient->getMember(['id' => 'self'])->toArray();
+            $self = $this->getMeetupClient()->getMember(['id' => 'self'])->toArray();
         } catch (\Exception $e) {
-            return new Result(Result::ERROR, null, []);
+            return new Result(Result::FAILURE, null, []);
         }
         $member = $this->getObjectManager()->getRepository('Db\Entity\Member')->find($self['id']);
 
