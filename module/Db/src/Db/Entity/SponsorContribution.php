@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * SponsorContribution
@@ -53,10 +54,11 @@ class SponsorContribution
      */
     private $event;
 
+
     /**
      * Set createdAt
      *
-     * @param  \DateTime           $createdAt
+     * @param \DateTime $createdAt
      * @return SponsorContribution
      */
     public function setCreatedAt($createdAt)
@@ -69,7 +71,7 @@ class SponsorContribution
     /**
      * Get createdAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getCreatedAt()
     {
@@ -79,7 +81,7 @@ class SponsorContribution
     /**
      * Set title
      *
-     * @param  string              $title
+     * @param string $title
      * @return SponsorContribution
      */
     public function setTitle($title)
@@ -92,7 +94,7 @@ class SponsorContribution
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
     public function getTitle()
     {
@@ -102,7 +104,7 @@ class SponsorContribution
     /**
      * Set description
      *
-     * @param  string              $description
+     * @param string $description
      * @return SponsorContribution
      */
     public function setDescription($description)
@@ -115,7 +117,7 @@ class SponsorContribution
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
     public function getDescription()
     {
@@ -125,7 +127,7 @@ class SponsorContribution
     /**
      * Set receivedWhat
      *
-     * @param  string              $receivedWhat
+     * @param string $receivedWhat
      * @return SponsorContribution
      */
     public function setReceivedWhat($receivedWhat)
@@ -138,7 +140,7 @@ class SponsorContribution
     /**
      * Get receivedWhat
      *
-     * @return string
+     * @return string 
      */
     public function getReceivedWhat()
     {
@@ -148,7 +150,7 @@ class SponsorContribution
     /**
      * Set receivedWhy
      *
-     * @param  string              $receivedWhy
+     * @param string $receivedWhy
      * @return SponsorContribution
      */
     public function setReceivedWhy($receivedWhy)
@@ -161,7 +163,7 @@ class SponsorContribution
     /**
      * Get receivedWhy
      *
-     * @return string
+     * @return string 
      */
     public function getReceivedWhy()
     {
@@ -171,7 +173,7 @@ class SponsorContribution
     /**
      * Set receivedHow
      *
-     * @param  string              $receivedHow
+     * @param string $receivedHow
      * @return SponsorContribution
      */
     public function setReceivedHow($receivedHow)
@@ -184,7 +186,7 @@ class SponsorContribution
     /**
      * Get receivedHow
      *
-     * @return string
+     * @return string 
      */
     public function getReceivedHow()
     {
@@ -194,7 +196,7 @@ class SponsorContribution
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -204,7 +206,7 @@ class SponsorContribution
     /**
      * Set sponsor
      *
-     * @param  \Db\Entity\Sponsor  $sponsor
+     * @param \Db\Entity\Sponsor $sponsor
      * @return SponsorContribution
      */
     public function setSponsor(\Db\Entity\Sponsor $sponsor)
@@ -217,7 +219,7 @@ class SponsorContribution
     /**
      * Get sponsor
      *
-     * @return \Db\Entity\Sponsor
+     * @return \Db\Entity\Sponsor 
      */
     public function getSponsor()
     {
@@ -227,7 +229,7 @@ class SponsorContribution
     /**
      * Set event
      *
-     * @param  \Db\Entity\Event    $event
+     * @param \Db\Entity\Event $event
      * @return SponsorContribution
      */
     public function setEvent(\Db\Entity\Event $event = null)
@@ -240,7 +242,7 @@ class SponsorContribution
     /**
      * Get event
      *
-     * @return \Db\Entity\Event
+     * @return \Db\Entity\Event 
      */
     public function getEvent()
     {

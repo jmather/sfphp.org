@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Presentation
@@ -55,7 +56,7 @@ class Presentation
     /**
      * Set title
      *
-     * @param  string       $title
+     * @param string $title
      * @return Presentation
      */
     public function setTitle($title)
@@ -68,7 +69,7 @@ class Presentation
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
     public function getTitle()
     {
@@ -78,7 +79,7 @@ class Presentation
     /**
      * Set description
      *
-     * @param  string       $description
+     * @param string $description
      * @return Presentation
      */
     public function setDescription($description)
@@ -91,7 +92,7 @@ class Presentation
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
     public function getDescription()
     {
@@ -101,7 +102,7 @@ class Presentation
     /**
      * Set duration
      *
-     * @param  string       $duration
+     * @param string $duration
      * @return Presentation
      */
     public function setDuration($duration)
@@ -114,7 +115,7 @@ class Presentation
     /**
      * Get duration
      *
-     * @return string
+     * @return string 
      */
     public function getDuration()
     {
@@ -124,7 +125,7 @@ class Presentation
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -134,7 +135,7 @@ class Presentation
     /**
      * Add presentationLink
      *
-     * @param  \Db\Entity\PresentationLink $presentationLink
+     * @param \Db\Entity\PresentationLink $presentationLink
      * @return Presentation
      */
     public function addPresentationLink(\Db\Entity\PresentationLink $presentationLink)
@@ -157,7 +158,7 @@ class Presentation
     /**
      * Get presentationLink
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getPresentationLink()
     {
@@ -167,7 +168,7 @@ class Presentation
     /**
      * Add presentationSubmit
      *
-     * @param  \Db\Entity\PresentationProposal $presentationSubmit
+     * @param \Db\Entity\PresentationProposal $presentationSubmit
      * @return Presentation
      */
     public function addPresentationSubmit(\Db\Entity\PresentationProposal $presentationSubmit)
@@ -190,7 +191,7 @@ class Presentation
     /**
      * Get presentationSubmit
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getPresentationSubmit()
     {
@@ -200,7 +201,7 @@ class Presentation
     /**
      * Set member
      *
-     * @param  \Db\Entity\Member $member
+     * @param \Db\Entity\Member $member
      * @return Presentation
      */
     public function setMember(\Db\Entity\Member $member)
@@ -213,7 +214,7 @@ class Presentation
     /**
      * Get member
      *
-     * @return \Db\Entity\Member
+     * @return \Db\Entity\Member 
      */
     public function getMember()
     {

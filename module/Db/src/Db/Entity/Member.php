@@ -2,41 +2,124 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Zend\Stdlib\ArraySerializableInterface;
+use DateTime;
 
 /**
  * Member
  */
-class Member
+class Member implements ArraySerializableInterface
 {
-    /**
-     * @var string
-     */
-    private $fullname;
+    public function exchangeArray(array $array)
+    {
+        foreach ($array as $field => $value) {
+            switch ($field) {
+                case 'id':
+                    $this->setId($value);
+                    break;
+                case 'name':
+                    $this->setName($value);
+                    break;
+                case 'status':
+                    $this->setStatus($value);
+                    break;
+                case 'state':
+                    $this->setState($value);
+                    break;
+                case 'language':
+                case 'lang':
+                    $this->setLanguage($value);
+                    break;
+                case 'city':
+                    $this->setCity($value);
+                    break;
+                case 'country':
+                    $this->setCountry($value);
+                    break;
+                case 'visited':
+                    $this->setVisitedAt(DateTime::createFromFormat('U', ($value / 1000)));
+                    break;
+                case 'visitedAt':
+                    $this->setVisitedAt($value);
+                    break;
+                case 'joined':
+                    $this->setJoinedAt(DateTime::createFromFormat('U', ($value / 1000)));
+                    break;
+                case 'joinedAt':
+                    $this->setJoinedAt($value);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $this->setUpdatedAt(new \DateTime());
+
+        return $this;
+    }
+
+    public function getArrayCopy()
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'status' => $this->getStatus(),
+            'state' => $this->getState(),
+            'language' => $this->getLanguage(),
+            'city' => $this->getCity(),
+            'country' => $this->getCountry(),
+            'visitedAt' => $this->getVisitedAt(),
+            'joinedAt' => $this->getJoinedAt(),
+            'createdAt' => $this->getCreatedAt(),
+            'updatedAt' => $this->getUpdatedAt(),
+        ];
+    }
 
     /**
      * @var string
      */
-    private $username;
+    private $name;
 
     /**
      * @var string
      */
-    private $email;
+    private $status;
 
     /**
      * @var string
-     */
-    private $displayName;
-
-    /**
-     * @var string
-     */
-    private $password;
-
-    /**
-     * @var integer
      */
     private $state;
+
+    /**
+     * @var string
+     */
+    private $language;
+
+    /**
+     * @var string
+     */
+    private $city;
+
+    /**
+     * @var string
+     */
+    private $country;
+
+    /**
+     * @var \DateTime
+     */
+    private $visitedAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $joinedAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
 
     /**
      * @var integer
@@ -93,124 +176,55 @@ class Member
     }
 
     /**
-     * Set fullname
+     * Set name
      *
-     * @param  string $fullname
+     * @param string $name
      * @return Member
      */
-    public function setFullname($fullname)
+    public function setName($name)
     {
-        $this->fullname = $fullname;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get fullname
+     * Get name
      *
      * @return string
      */
-    public function getFullname()
+    public function getName()
     {
-        return $this->fullname;
+        return $this->name;
     }
 
     /**
-     * Set username
+     * Set status
      *
-     * @param  string $username
+     * @param string $status
      * @return Member
      */
-    public function setUsername($username)
+    public function setStatus($status)
     {
-        $this->username = $username;
+        $this->status = $status;
 
         return $this;
     }
 
     /**
-     * Get username
+     * Get status
      *
      * @return string
      */
-    public function getUsername()
+    public function getStatus()
     {
-        return $this->username;
-    }
-
-    /**
-     * Set email
-     *
-     * @param  string $email
-     * @return Member
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set displayName
-     *
-     * @param  string $displayName
-     * @return Member
-     */
-    public function setDisplayName($displayName)
-    {
-        $this->displayName = $displayName;
-
-        return $this;
-    }
-
-    /**
-     * Get displayName
-     *
-     * @return string
-     */
-    public function getDisplayName()
-    {
-        return $this->displayName;
-    }
-
-    /**
-     * Set password
-     *
-     * @param  string $password
-     * @return Member
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
+        return $this->status;
     }
 
     /**
      * Set state
      *
-     * @param  integer $state
+     * @param string $state
      * @return Member
      */
     public function setState($state)
@@ -223,11 +237,162 @@ class Member
     /**
      * Get state
      *
-     * @return integer
+     * @return string
      */
     public function getState()
     {
         return $this->state;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     * @return Member
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     * @return Member
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     * @return Member
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set visitedAt
+     *
+     * @param \DateTime $visitedAt
+     * @return Member
+     */
+    public function setVisitedAt($visitedAt)
+    {
+        $this->visitedAt = $visitedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get visitedAt
+     *
+     * @return \DateTime
+     */
+    public function getVisitedAt()
+    {
+        return $this->visitedAt;
+    }
+
+    /**
+     * Set joinedAt
+     *
+     * @param \DateTime $joinedAt
+     * @return Member
+     */
+    public function setJoinedAt($joinedAt)
+    {
+        $this->joinedAt = $joinedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get joinedAt
+     *
+     * @return \DateTime
+     */
+    public function getJoinedAt()
+    {
+        return $this->joinedAt;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return Member
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Member
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -243,7 +408,7 @@ class Member
     /**
      * Add presentation
      *
-     * @param  \Db\Entity\Presentation $presentation
+     * @param \Db\Entity\Presentation $presentation
      * @return Member
      */
     public function addPresentation(\Db\Entity\Presentation $presentation)
@@ -276,7 +441,7 @@ class Member
     /**
      * Add meetupUser
      *
-     * @param  \Db\Entity\MeetupMember $meetupUser
+     * @param \Db\Entity\MeetupMember $meetupUser
      * @return Member
      */
     public function addMeetupUser(\Db\Entity\MeetupMember $meetupUser)
@@ -309,7 +474,7 @@ class Member
     /**
      * Add sponsorContact
      *
-     * @param  \Db\Entity\SponsorContact $sponsorContact
+     * @param \Db\Entity\SponsorContact $sponsorContact
      * @return Member
      */
     public function addSponsorContact(\Db\Entity\SponsorContact $sponsorContact)
@@ -342,7 +507,7 @@ class Member
     /**
      * Add memberLink
      *
-     * @param  \Db\Entity\MemberLink $memberLink
+     * @param \Db\Entity\MemberLink $memberLink
      * @return Member
      */
     public function addMemberLink(\Db\Entity\MemberLink $memberLink)
@@ -375,7 +540,7 @@ class Member
     /**
      * Add meetupGroupMember
      *
-     * @param  \Db\Entity\MeetupGroupMember $meetupGroupMember
+     * @param \Db\Entity\MeetupGroupMember $meetupGroupMember
      * @return Member
      */
     public function addMeetupGroupMember(\Db\Entity\MeetupGroupMember $meetupGroupMember)
@@ -408,7 +573,7 @@ class Member
     /**
      * Add eventHost
      *
-     * @param  \Db\Entity\Event $eventHost
+     * @param \Db\Entity\Event $eventHost
      * @return Member
      */
     public function addEventHost(\Db\Entity\Event $eventHost)
@@ -441,7 +606,7 @@ class Member
     /**
      * Add role
      *
-     * @param  \Db\Entity\Role $role
+     * @param \Db\Entity\Role $role
      * @return Member
      */
     public function addRole(\Db\Entity\Role $role)
@@ -469,5 +634,61 @@ class Member
     public function getRole()
     {
         return $this->role;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Member
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $lastRequestAt;
+
+
+    /**
+     * Set lastRequestAt
+     *
+     * @param \DateTime $lastRequestAt
+     * @return Member
+     */
+    public function setLastRequestAt($lastRequestAt)
+    {
+        $this->lastRequestAt = $lastRequestAt;
+
+        return $this;
+    }
+
+    /**
+     * Get lastRequestAt
+     *
+     * @return \DateTime 
+     */
+    public function getLastRequestAt()
+    {
+        return $this->lastRequestAt;
     }
 }

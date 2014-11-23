@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * SponsorContact
@@ -33,10 +34,11 @@ class SponsorContact
      */
     private $member;
 
+
     /**
      * Set title
      *
-     * @param  string         $title
+     * @param string $title
      * @return SponsorContact
      */
     public function setTitle($title)
@@ -49,7 +51,7 @@ class SponsorContact
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
     public function getTitle()
     {
@@ -59,7 +61,7 @@ class SponsorContact
     /**
      * Set description
      *
-     * @param  string         $description
+     * @param string $description
      * @return SponsorContact
      */
     public function setDescription($description)
@@ -72,7 +74,7 @@ class SponsorContact
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
     public function getDescription()
     {
@@ -82,7 +84,7 @@ class SponsorContact
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -92,7 +94,7 @@ class SponsorContact
     /**
      * Set sponsor
      *
-     * @param  \Db\Entity\Sponsor $sponsor
+     * @param \Db\Entity\Sponsor $sponsor
      * @return SponsorContact
      */
     public function setSponsor(\Db\Entity\Sponsor $sponsor)
@@ -105,7 +107,7 @@ class SponsorContact
     /**
      * Get sponsor
      *
-     * @return \Db\Entity\Sponsor
+     * @return \Db\Entity\Sponsor 
      */
     public function getSponsor()
     {
@@ -115,7 +117,7 @@ class SponsorContact
     /**
      * Set member
      *
-     * @param  \Db\Entity\Member $member
+     * @param \Db\Entity\Member $member
      * @return SponsorContact
      */
     public function setMember(\Db\Entity\Member $member)
@@ -128,7 +130,7 @@ class SponsorContact
     /**
      * Get member
      *
-     * @return \Db\Entity\Member
+     * @return \Db\Entity\Member 
      */
     public function getMember()
     {

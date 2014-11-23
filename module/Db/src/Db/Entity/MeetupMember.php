@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * MeetupMember
@@ -33,10 +34,11 @@ class MeetupMember
      */
     private $event;
 
+
     /**
      * Set rsvpAt
      *
-     * @param  \DateTime    $rsvpAt
+     * @param \DateTime $rsvpAt
      * @return MeetupMember
      */
     public function setRsvpAt($rsvpAt)
@@ -49,7 +51,7 @@ class MeetupMember
     /**
      * Get rsvpAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getRsvpAt()
     {
@@ -59,7 +61,7 @@ class MeetupMember
     /**
      * Set attendedAt
      *
-     * @param  \DateTime    $attendedAt
+     * @param \DateTime $attendedAt
      * @return MeetupMember
      */
     public function setAttendedAt($attendedAt)
@@ -72,7 +74,7 @@ class MeetupMember
     /**
      * Get attendedAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getAttendedAt()
     {
@@ -82,7 +84,7 @@ class MeetupMember
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -92,7 +94,7 @@ class MeetupMember
     /**
      * Set member
      *
-     * @param  \Db\Entity\Member $member
+     * @param \Db\Entity\Member $member
      * @return MeetupMember
      */
     public function setMember(\Db\Entity\Member $member)
@@ -105,7 +107,7 @@ class MeetupMember
     /**
      * Get member
      *
-     * @return \Db\Entity\Member
+     * @return \Db\Entity\Member 
      */
     public function getMember()
     {
@@ -115,7 +117,7 @@ class MeetupMember
     /**
      * Set event
      *
-     * @param  \Db\Entity\Event $event
+     * @param \Db\Entity\Event $event
      * @return MeetupMember
      */
     public function setEvent(\Db\Entity\Event $event)
@@ -128,7 +130,7 @@ class MeetupMember
     /**
      * Get event
      *
-     * @return \Db\Entity\Event
+     * @return \Db\Entity\Event 
      */
     public function getEvent()
     {

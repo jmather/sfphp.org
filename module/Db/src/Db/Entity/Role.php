@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Role
@@ -39,7 +40,7 @@ class Role
     /**
      * Set roleId
      *
-     * @param  string $roleId
+     * @param string $roleId
      * @return Role
      */
     public function setRoleId($roleId)
@@ -52,7 +53,7 @@ class Role
     /**
      * Get roleId
      *
-     * @return string
+     * @return string 
      */
     public function getRoleId()
     {
@@ -62,7 +63,7 @@ class Role
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -72,7 +73,7 @@ class Role
     /**
      * Set parent
      *
-     * @param  \Db\Entity\Role $parent
+     * @param \Db\Entity\Role $parent
      * @return Role
      */
     public function setParent(\Db\Entity\Role $parent = null)
@@ -85,7 +86,7 @@ class Role
     /**
      * Get parent
      *
-     * @return \Db\Entity\Role
+     * @return \Db\Entity\Role 
      */
     public function getParent()
     {
@@ -95,7 +96,7 @@ class Role
     /**
      * Add member
      *
-     * @param  \Db\Entity\Member $member
+     * @param \Db\Entity\Member $member
      * @return Role
      */
     public function addMember(\Db\Entity\Member $member)
@@ -118,7 +119,7 @@ class Role
     /**
      * Get member
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getMember()
     {

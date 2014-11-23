@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * PresentationProposal
@@ -48,10 +49,11 @@ class PresentationProposal
      */
     private $meetupGroup;
 
+
     /**
      * Set createdAt
      *
-     * @param  \DateTime            $createdAt
+     * @param \DateTime $createdAt
      * @return PresentationProposal
      */
     public function setCreatedAt($createdAt)
@@ -64,7 +66,7 @@ class PresentationProposal
     /**
      * Get createdAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getCreatedAt()
     {
@@ -74,7 +76,7 @@ class PresentationProposal
     /**
      * Set approvedAt
      *
-     * @param  \DateTime            $approvedAt
+     * @param \DateTime $approvedAt
      * @return PresentationProposal
      */
     public function setApprovedAt($approvedAt)
@@ -87,7 +89,7 @@ class PresentationProposal
     /**
      * Get approvedAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getApprovedAt()
     {
@@ -97,7 +99,7 @@ class PresentationProposal
     /**
      * Set description
      *
-     * @param  string               $description
+     * @param string $description
      * @return PresentationProposal
      */
     public function setDescription($description)
@@ -110,7 +112,7 @@ class PresentationProposal
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
     public function getDescription()
     {
@@ -120,7 +122,7 @@ class PresentationProposal
     /**
      * Set consideration
      *
-     * @param  string               $consideration
+     * @param string $consideration
      * @return PresentationProposal
      */
     public function setConsideration($consideration)
@@ -133,7 +135,7 @@ class PresentationProposal
     /**
      * Get consideration
      *
-     * @return string
+     * @return string 
      */
     public function getConsideration()
     {
@@ -143,7 +145,7 @@ class PresentationProposal
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -153,7 +155,7 @@ class PresentationProposal
     /**
      * Set presentation
      *
-     * @param  \Db\Entity\Presentation $presentation
+     * @param \Db\Entity\Presentation $presentation
      * @return PresentationProposal
      */
     public function setPresentation(\Db\Entity\Presentation $presentation)
@@ -166,7 +168,7 @@ class PresentationProposal
     /**
      * Get presentation
      *
-     * @return \Db\Entity\Presentation
+     * @return \Db\Entity\Presentation 
      */
     public function getPresentation()
     {
@@ -176,7 +178,7 @@ class PresentationProposal
     /**
      * Set event
      *
-     * @param  \Db\Entity\Event     $event
+     * @param \Db\Entity\Event $event
      * @return PresentationProposal
      */
     public function setEvent(\Db\Entity\Event $event = null)
@@ -189,7 +191,7 @@ class PresentationProposal
     /**
      * Get event
      *
-     * @return \Db\Entity\Event
+     * @return \Db\Entity\Event 
      */
     public function getEvent()
     {
@@ -199,7 +201,7 @@ class PresentationProposal
     /**
      * Set meetupGroup
      *
-     * @param  \Db\Entity\MeetupGroup $meetupGroup
+     * @param \Db\Entity\MeetupGroup $meetupGroup
      * @return PresentationProposal
      */
     public function setMeetupGroup(\Db\Entity\MeetupGroup $meetupGroup)
@@ -212,7 +214,7 @@ class PresentationProposal
     /**
      * Get meetupGroup
      *
-     * @return \Db\Entity\MeetupGroup
+     * @return \Db\Entity\MeetupGroup 
      */
     public function getMeetupGroup()
     {

@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Event
@@ -170,7 +171,7 @@ class Event
     /**
      * Set scheduledAt
      *
-     * @param  \DateTime $scheduledAt
+     * @param \DateTime $scheduledAt
      * @return Event
      */
     public function setScheduledAt($scheduledAt)
@@ -183,7 +184,7 @@ class Event
     /**
      * Get scheduledAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getScheduledAt()
     {
@@ -193,7 +194,7 @@ class Event
     /**
      * Set videoUrl
      *
-     * @param  string $videoUrl
+     * @param string $videoUrl
      * @return Event
      */
     public function setVideoUrl($videoUrl)
@@ -206,7 +207,7 @@ class Event
     /**
      * Get videoUrl
      *
-     * @return string
+     * @return string 
      */
     public function getVideoUrl()
     {
@@ -216,7 +217,7 @@ class Event
     /**
      * Set videoStartAt
      *
-     * @param  \DateTime $videoStartAt
+     * @param \DateTime $videoStartAt
      * @return Event
      */
     public function setVideoStartAt($videoStartAt)
@@ -229,7 +230,7 @@ class Event
     /**
      * Get videoStartAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getVideoStartAt()
     {
@@ -239,7 +240,7 @@ class Event
     /**
      * Set startAt
      *
-     * @param  \DateTime $startAt
+     * @param \DateTime $startAt
      * @return Event
      */
     public function setStartAt($startAt)
@@ -252,7 +253,7 @@ class Event
     /**
      * Get startAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getStartAt()
     {
@@ -262,7 +263,7 @@ class Event
     /**
      * Set name
      *
-     * @param  string $name
+     * @param string $name
      * @return Event
      */
     public function setName($name)
@@ -275,7 +276,7 @@ class Event
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
@@ -285,7 +286,7 @@ class Event
     /**
      * Set abstract
      *
-     * @param  string $abstract
+     * @param string $abstract
      * @return Event
      */
     public function setAbstract($abstract)
@@ -298,7 +299,7 @@ class Event
     /**
      * Get abstract
      *
-     * @return string
+     * @return string 
      */
     public function getAbstract()
     {
@@ -308,7 +309,7 @@ class Event
     /**
      * Set description
      *
-     * @param  string $description
+     * @param string $description
      * @return Event
      */
     public function setDescription($description)
@@ -321,7 +322,7 @@ class Event
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
     public function getDescription()
     {
@@ -331,7 +332,7 @@ class Event
     /**
      * Set why
      *
-     * @param  string $why
+     * @param string $why
      * @return Event
      */
     public function setWhy($why)
@@ -344,7 +345,7 @@ class Event
     /**
      * Get why
      *
-     * @return string
+     * @return string 
      */
     public function getWhy()
     {
@@ -354,7 +355,7 @@ class Event
     /**
      * Set duration
      *
-     * @param  integer $duration
+     * @param integer $duration
      * @return Event
      */
     public function setDuration($duration)
@@ -367,7 +368,7 @@ class Event
     /**
      * Get duration
      *
-     * @return integer
+     * @return integer 
      */
     public function getDuration()
     {
@@ -377,7 +378,7 @@ class Event
     /**
      * Set guestLimit
      *
-     * @param  integer $guestLimit
+     * @param integer $guestLimit
      * @return Event
      */
     public function setGuestLimit($guestLimit)
@@ -390,7 +391,7 @@ class Event
     /**
      * Get guestLimit
      *
-     * @return integer
+     * @return integer 
      */
     public function getGuestLimit()
     {
@@ -400,7 +401,7 @@ class Event
     /**
      * Set directions
      *
-     * @param  string $directions
+     * @param string $directions
      * @return Event
      */
     public function setDirections($directions)
@@ -413,7 +414,7 @@ class Event
     /**
      * Get directions
      *
-     * @return string
+     * @return string 
      */
     public function getDirections()
     {
@@ -423,7 +424,7 @@ class Event
     /**
      * Set isPublished
      *
-     * @param  integer $isPublished
+     * @param integer $isPublished
      * @return Event
      */
     public function setIsPublished($isPublished)
@@ -436,7 +437,7 @@ class Event
     /**
      * Get isPublished
      *
-     * @return integer
+     * @return integer 
      */
     public function getIsPublished()
     {
@@ -446,7 +447,7 @@ class Event
     /**
      * Set rsvpOpen
      *
-     * @param  \DateTime $rsvpOpen
+     * @param \DateTime $rsvpOpen
      * @return Event
      */
     public function setRsvpOpen($rsvpOpen)
@@ -459,7 +460,7 @@ class Event
     /**
      * Get rsvpOpen
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getRsvpOpen()
     {
@@ -469,7 +470,7 @@ class Event
     /**
      * Set rsvpClose
      *
-     * @param  \DateTime $rsvpClose
+     * @param \DateTime $rsvpClose
      * @return Event
      */
     public function setRsvpClose($rsvpClose)
@@ -482,7 +483,7 @@ class Event
     /**
      * Get rsvpClose
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getRsvpClose()
     {
@@ -492,7 +493,7 @@ class Event
     /**
      * Set rsvpLimit
      *
-     * @param  integer $rsvpLimit
+     * @param integer $rsvpLimit
      * @return Event
      */
     public function setRsvpLimit($rsvpLimit)
@@ -505,7 +506,7 @@ class Event
     /**
      * Get rsvpLimit
      *
-     * @return integer
+     * @return integer 
      */
     public function getRsvpLimit()
     {
@@ -515,7 +516,7 @@ class Event
     /**
      * Set waitListing
      *
-     * @param  string $waitListing
+     * @param string $waitListing
      * @return Event
      */
     public function setWaitListing($waitListing)
@@ -528,7 +529,7 @@ class Event
     /**
      * Get waitListing
      *
-     * @return string
+     * @return string 
      */
     public function getWaitListing()
     {
@@ -538,7 +539,7 @@ class Event
     /**
      * Set hostInstruction
      *
-     * @param  string $hostInstruction
+     * @param string $hostInstruction
      * @return Event
      */
     public function setHostInstruction($hostInstruction)
@@ -551,7 +552,7 @@ class Event
     /**
      * Get hostInstruction
      *
-     * @return string
+     * @return string 
      */
     public function getHostInstruction()
     {
@@ -561,7 +562,7 @@ class Event
     /**
      * Set enableEmailReminders
      *
-     * @param  boolean $enableEmailReminders
+     * @param boolean $enableEmailReminders
      * @return Event
      */
     public function setEnableEmailReminders($enableEmailReminders)
@@ -574,7 +575,7 @@ class Event
     /**
      * Get enableEmailReminders
      *
-     * @return boolean
+     * @return boolean 
      */
     public function getEnableEmailReminders()
     {
@@ -584,7 +585,7 @@ class Event
     /**
      * Set isVenuePublic
      *
-     * @param  boolean $isVenuePublic
+     * @param boolean $isVenuePublic
      * @return Event
      */
     public function setIsVenuePublic($isVenuePublic)
@@ -597,7 +598,7 @@ class Event
     /**
      * Get isVenuePublic
      *
-     * @return boolean
+     * @return boolean 
      */
     public function getIsVenuePublic()
     {
@@ -607,7 +608,7 @@ class Event
     /**
      * Set id
      *
-     * @param  integer $id
+     * @param integer $id
      * @return Event
      */
     public function setId($id)
@@ -620,7 +621,7 @@ class Event
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -630,7 +631,7 @@ class Event
     /**
      * Add meetupUser
      *
-     * @param  \Db\Entity\MeetupMember $meetupUser
+     * @param \Db\Entity\MeetupMember $meetupUser
      * @return Event
      */
     public function addMeetupUser(\Db\Entity\MeetupMember $meetupUser)
@@ -653,7 +654,7 @@ class Event
     /**
      * Get meetupUser
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getMeetupUser()
     {
@@ -663,7 +664,7 @@ class Event
     /**
      * Add meetupLink
      *
-     * @param  \Db\Entity\MeetupLink $meetupLink
+     * @param \Db\Entity\MeetupLink $meetupLink
      * @return Event
      */
     public function addMeetupLink(\Db\Entity\MeetupLink $meetupLink)
@@ -686,7 +687,7 @@ class Event
     /**
      * Get meetupLink
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getMeetupLink()
     {
@@ -696,7 +697,7 @@ class Event
     /**
      * Add sponsorContribution
      *
-     * @param  \Db\Entity\SponsorContribution $sponsorContribution
+     * @param \Db\Entity\SponsorContribution $sponsorContribution
      * @return Event
      */
     public function addSponsorContribution(\Db\Entity\SponsorContribution $sponsorContribution)
@@ -719,7 +720,7 @@ class Event
     /**
      * Get sponsorContribution
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getSponsorContribution()
     {
@@ -729,7 +730,7 @@ class Event
     /**
      * Add presentationProposal
      *
-     * @param  \Db\Entity\PresentationProposal $presentationProposal
+     * @param \Db\Entity\PresentationProposal $presentationProposal
      * @return Event
      */
     public function addPresentationProposal(\Db\Entity\PresentationProposal $presentationProposal)
@@ -752,7 +753,7 @@ class Event
     /**
      * Get presentationProposal
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getPresentationProposal()
     {
@@ -762,7 +763,7 @@ class Event
     /**
      * Add eventQuestion
      *
-     * @param  \Db\Entity\EventQuestion $eventQuestion
+     * @param \Db\Entity\EventQuestion $eventQuestion
      * @return Event
      */
     public function addEventQuestion(\Db\Entity\EventQuestion $eventQuestion)
@@ -785,7 +786,7 @@ class Event
     /**
      * Get eventQuestion
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getEventQuestion()
     {
@@ -795,7 +796,7 @@ class Event
     /**
      * Set venue
      *
-     * @param  \Db\Entity\Venue $venue
+     * @param \Db\Entity\Venue $venue
      * @return Event
      */
     public function setVenue(\Db\Entity\Venue $venue = null)
@@ -808,7 +809,7 @@ class Event
     /**
      * Get venue
      *
-     * @return \Db\Entity\Venue
+     * @return \Db\Entity\Venue 
      */
     public function getVenue()
     {
@@ -818,7 +819,7 @@ class Event
     /**
      * Set meetupGroup
      *
-     * @param  \Db\Entity\MeetupGroup $meetupGroup
+     * @param \Db\Entity\MeetupGroup $meetupGroup
      * @return Event
      */
     public function setMeetupGroup(\Db\Entity\MeetupGroup $meetupGroup)
@@ -831,7 +832,7 @@ class Event
     /**
      * Get meetupGroup
      *
-     * @return \Db\Entity\MeetupGroup
+     * @return \Db\Entity\MeetupGroup 
      */
     public function getMeetupGroup()
     {
@@ -841,7 +842,7 @@ class Event
     /**
      * Add jointMeetupGroup
      *
-     * @param  \Db\Entity\MeetupGroup $jointMeetupGroup
+     * @param \Db\Entity\MeetupGroup $jointMeetupGroup
      * @return Event
      */
     public function addJointMeetupGroup(\Db\Entity\MeetupGroup $jointMeetupGroup)
@@ -864,7 +865,7 @@ class Event
     /**
      * Get jointMeetupGroup
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getJointMeetupGroup()
     {
@@ -874,7 +875,7 @@ class Event
     /**
      * Add host
      *
-     * @param  \Db\Entity\Member $host
+     * @param \Db\Entity\Member $host
      * @return Event
      */
     public function addHost(\Db\Entity\Member $host)
@@ -897,7 +898,7 @@ class Event
     /**
      * Get host
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getHost()
     {

@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * MeetupGroup
@@ -64,7 +65,7 @@ class MeetupGroup
     /**
      * Set name
      *
-     * @param  string      $name
+     * @param string $name
      * @return MeetupGroup
      */
     public function setName($name)
@@ -77,7 +78,7 @@ class MeetupGroup
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
@@ -87,7 +88,7 @@ class MeetupGroup
     /**
      * Set id
      *
-     * @param  integer     $id
+     * @param integer $id
      * @return MeetupGroup
      */
     public function setId($id)
@@ -100,7 +101,7 @@ class MeetupGroup
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -110,7 +111,7 @@ class MeetupGroup
     /**
      * Add event
      *
-     * @param  \Db\Entity\Event $event
+     * @param \Db\Entity\Event $event
      * @return MeetupGroup
      */
     public function addEvent(\Db\Entity\Event $event)
@@ -133,7 +134,7 @@ class MeetupGroup
     /**
      * Get event
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getEvent()
     {
@@ -143,7 +144,7 @@ class MeetupGroup
     /**
      * Add sponsor
      *
-     * @param  \Db\Entity\Sponsor $sponsor
+     * @param \Db\Entity\Sponsor $sponsor
      * @return MeetupGroup
      */
     public function addSponsor(\Db\Entity\Sponsor $sponsor)
@@ -166,7 +167,7 @@ class MeetupGroup
     /**
      * Get sponsor
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getSponsor()
     {
@@ -176,7 +177,7 @@ class MeetupGroup
     /**
      * Add meetupGroupLink
      *
-     * @param  \Db\Entity\MeetupGroupLink $meetupGroupLink
+     * @param \Db\Entity\MeetupGroupLink $meetupGroupLink
      * @return MeetupGroup
      */
     public function addMeetupGroupLink(\Db\Entity\MeetupGroupLink $meetupGroupLink)
@@ -199,7 +200,7 @@ class MeetupGroup
     /**
      * Get meetupGroupLink
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getMeetupGroupLink()
     {
@@ -209,7 +210,7 @@ class MeetupGroup
     /**
      * Add presentationProposal
      *
-     * @param  \Db\Entity\PresentationProposal $presentationProposal
+     * @param \Db\Entity\PresentationProposal $presentationProposal
      * @return MeetupGroup
      */
     public function addPresentationProposal(\Db\Entity\PresentationProposal $presentationProposal)
@@ -232,7 +233,7 @@ class MeetupGroup
     /**
      * Get presentationProposal
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getPresentationProposal()
     {
@@ -242,7 +243,7 @@ class MeetupGroup
     /**
      * Add meetupGroupMember
      *
-     * @param  \Db\Entity\MeetupGroupMember $meetupGroupMember
+     * @param \Db\Entity\MeetupGroupMember $meetupGroupMember
      * @return MeetupGroup
      */
     public function addMeetupGroupMember(\Db\Entity\MeetupGroupMember $meetupGroupMember)
@@ -265,7 +266,7 @@ class MeetupGroup
     /**
      * Get meetupGroupMember
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getMeetupGroupMember()
     {
@@ -275,7 +276,7 @@ class MeetupGroup
     /**
      * Add jointEvent
      *
-     * @param  \Db\Entity\Event $jointEvent
+     * @param \Db\Entity\Event $jointEvent
      * @return MeetupGroup
      */
     public function addJointEvent(\Db\Entity\Event $jointEvent)
@@ -298,7 +299,7 @@ class MeetupGroup
     /**
      * Get jointEvent
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getJointEvent()
     {

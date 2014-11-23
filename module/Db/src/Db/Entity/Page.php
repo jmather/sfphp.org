@@ -1,14 +1,11 @@
 <?php
-
 namespace Db\Entity;
-
 use Zend\InputFilter\Factory as InputFactory;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use Zend\Stdlib\ArraySerializableInterface;
 use DateTime;
-
 /**
  * Page
  */
@@ -37,12 +34,9 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
                     break;
             }
         }
-
         $this->setUpdatedAt(new DateTime());
-
         return $this;
     }
-
     public function getArrayCopy()
     {
         return [
@@ -55,18 +49,15 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
             'sort' => $this->getSort(),
         ];
     }
-
 // Add content to this method:
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
         throw new \Exception("Not used");
     }
-
     public function getInputFilter()
     {
         $inputFilter = new InputFilter();
         $factory     = new InputFactory();
-
         $inputFilter->add($factory->createInput(array(
             'name' => 'urlIdentifier',
             'required' => true,
@@ -74,7 +65,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
                 array('name' => 'Alnum'),
             ),
         )));
-
         $inputFilter->add($factory->createInput(array(
             'name'     => 'title',
             'required' => true,
@@ -93,7 +83,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
                 ),
             ),
         )));
-
         $inputFilter->add($factory->createInput(array(
             'name'     => 'description',
             'required' => false,
@@ -102,7 +91,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
             'validators' => array(
             ),
         )));
-
         $inputFilter->add($factory->createInput(array(
             'name'     => 'sort',
             'required' => false,
@@ -112,7 +100,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
                 array('name' => 'Int'),
             ),
         )));
-
         $inputFilter->add($factory->createInput(array(
             'name' => 'isPublished',
             'required' => false,
@@ -120,40 +107,32 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
                 array('name' => 'Boolean'),
             ),
         )));
-
         return $inputFilter;
     }
-
     /**
      * @var string
      */
     private $urlIdentifier;
-
     /**
      * @var string
      */
     private $title;
-
     /**
      * @var string
      */
     private $description;
-
     /**
      * @var boolean
      */
     private $isPublished;
-
     /**
      * @var \DateTime
      */
     private $updatedAt;
-
     /**
      * @var integer
      */
     private $id;
-
     /**
      * Set urlIdentifier
      *
@@ -163,10 +142,8 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setUrlIdentifier($urlIdentifier)
     {
         $this->urlIdentifier = $urlIdentifier;
-
         return $this;
     }
-
     /**
      * Get urlIdentifier
      *
@@ -176,7 +153,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     {
         return $this->urlIdentifier;
     }
-
     /**
      * Set title
      *
@@ -186,10 +162,8 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setTitle($title)
     {
         $this->title = $title;
-
         return $this;
     }
-
     /**
      * Get title
      *
@@ -199,7 +173,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     {
         return $this->title;
     }
-
     /**
      * Set description
      *
@@ -209,10 +182,8 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setDescription($description)
     {
         $this->description = $description;
-
         return $this;
     }
-
     /**
      * Get description
      *
@@ -222,7 +193,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     {
         return $this->description;
     }
-
     /**
      * Set isPublished
      *
@@ -232,10 +202,8 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setIsPublished($isPublished)
     {
         $this->isPublished = $isPublished;
-
         return $this;
     }
-
     /**
      * Get isPublished
      *
@@ -245,7 +213,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     {
         return $this->isPublished;
     }
-
     /**
      * Set updatedAt
      *
@@ -255,10 +222,8 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
-
         return $this;
     }
-
     /**
      * Get updatedAt
      *
@@ -268,7 +233,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     {
         return $this->updatedAt;
     }
-
     /**
      * Get id
      *
@@ -282,7 +246,6 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
      * @var integer
      */
     private $sort;
-
     /**
      * Set sort
      *
@@ -292,10 +255,8 @@ class Page implements InputFilterAwareInterface, ArraySerializableInterface
     public function setSort($sort)
     {
         $this->sort = $sort;
-
         return $this;
     }
-
     /**
      * Get sort
      *

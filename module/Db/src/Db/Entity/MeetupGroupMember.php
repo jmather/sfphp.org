@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * MeetupGroupMember
@@ -28,10 +29,11 @@ class MeetupGroupMember
      */
     private $member;
 
+
     /**
      * Set role
      *
-     * @param  string            $role
+     * @param string $role
      * @return MeetupGroupMember
      */
     public function setRole($role)
@@ -44,7 +46,7 @@ class MeetupGroupMember
     /**
      * Get role
      *
-     * @return string
+     * @return string 
      */
     public function getRole()
     {
@@ -54,7 +56,7 @@ class MeetupGroupMember
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -64,7 +66,7 @@ class MeetupGroupMember
     /**
      * Set meetupGroup
      *
-     * @param  \Db\Entity\MeetupGroup $meetupGroup
+     * @param \Db\Entity\MeetupGroup $meetupGroup
      * @return MeetupGroupMember
      */
     public function setMeetupGroup(\Db\Entity\MeetupGroup $meetupGroup = null)
@@ -77,7 +79,7 @@ class MeetupGroupMember
     /**
      * Get meetupGroup
      *
-     * @return \Db\Entity\MeetupGroup
+     * @return \Db\Entity\MeetupGroup 
      */
     public function getMeetupGroup()
     {
@@ -87,7 +89,7 @@ class MeetupGroupMember
     /**
      * Set member
      *
-     * @param  \Db\Entity\Member $member
+     * @param \Db\Entity\Member $member
      * @return MeetupGroupMember
      */
     public function setMember(\Db\Entity\Member $member = null)
@@ -100,7 +102,7 @@ class MeetupGroupMember
     /**
      * Get member
      *
-     * @return \Db\Entity\Member
+     * @return \Db\Entity\Member 
      */
     public function getMember()
     {

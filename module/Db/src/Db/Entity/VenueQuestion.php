@@ -2,6 +2,7 @@
 
 namespace Db\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * VenueQuestion
@@ -23,10 +24,11 @@ class VenueQuestion
      */
     private $venue;
 
+
     /**
      * Set body
      *
-     * @param  string        $body
+     * @param string $body
      * @return VenueQuestion
      */
     public function setBody($body)
@@ -39,7 +41,7 @@ class VenueQuestion
     /**
      * Get body
      *
-     * @return string
+     * @return string 
      */
     public function getBody()
     {
@@ -49,7 +51,7 @@ class VenueQuestion
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -59,7 +61,7 @@ class VenueQuestion
     /**
      * Set venue
      *
-     * @param  \Db\Entity\Venue $venue
+     * @param \Db\Entity\Venue $venue
      * @return VenueQuestion
      */
     public function setVenue(\Db\Entity\Venue $venue = null)
@@ -72,7 +74,7 @@ class VenueQuestion
     /**
      * Get venue
      *
-     * @return \Db\Entity\Venue
+     * @return \Db\Entity\Venue 
      */
     public function getVenue()
     {
