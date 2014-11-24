@@ -12,8 +12,15 @@ class PageController extends AbstractActionController
 {
     public function indexAction()
     {
-        $urlIdentifier = $this->params()->fromRoute('url-identifier');
         $objectManager = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+        $urlIdentifier = $this->params()->fromRoute('url-identifier');
+
+        // Handle id for audit linkback
+        if (is_numeric($urlIdentifier)) {
+            $page = $objectManager->getRepository('Db\Entity\Page')->find((int) $urlIdentifier);
+
+            return $this->plugin('redirect')->toRoute('page', ['url-identifier' => $page->getUrlIdentifier()]);
+        }
 
         $page = $objectManager->getRepository('Db\Entity\Page')->findOneBy([
             'urlIdentifier' => $urlIdentifier,

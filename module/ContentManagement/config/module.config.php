@@ -34,7 +34,7 @@ return array(
             'page' => array(
                 'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/page[/:url-identifier]',
+                    'route'    => '/page/[:url-identifier][:id]',
                     'defaults' => array(
                         'controller'    => 'ContentManagement\Controller\Page',
                         'action'        => 'index',
