@@ -11,6 +11,26 @@
  * file.
  */
 
+$timezone = 'UTC';
+date_default_timezone_set($timezone);
+
 return array(
-    // ...
+    'audit' => array(
+        'datetimeFormat' => 'r',
+        'paginatorLimit' => 20,
+
+        'tableNamePrefix' => '',
+        'tableNameSuffix' => '_audit',
+        'revisionTableName' => 'Revision',
+        'revisionEntityTableName' => 'RevisionEntity',
+
+        'authenticationService' => 'Zend\Authentication\AuthenticationService',
+        'userEntityClassName' => 'Db\Entity\Member',
+
+        'entities' => array(
+            'Db\Entity\Member' => array(),
+            'Db\Entity\Page' => array(),
+            'Db\Entity\Role' => array(),
+        ),
+    ),
 );

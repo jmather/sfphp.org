@@ -19,9 +19,11 @@ $ormParams = [
     'port'  => '3306',
 ];
 
+// https://secure.meetup.com/meetup_api/oauth_consumers/
 $meetup = [
-    'key' => 'asdf',
-    'secret' => 'fdsa',
+    'key' => 'keyhere',
+    'secret' => 'ereh terces',
+    'redirect' => 'http://dev-tomhanderson.sfphp.org/authentication',
 ];
 
 /** -----End User Edit-------------------------------------- **/

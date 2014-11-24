@@ -4,8 +4,78 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1bbba330f53d0e34a5efd080422456a7",
+    "hash": "b3353eb60c4ce646607f64f7824e9418",
     "packages": [
+        {
+            "name": "bjyoungblood/bjy-authorize",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bjyoungblood/BjyAuthorize.git",
+                "reference": "02723bd19f0bba33649d708022f8d0e0b795f57a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bjyoungblood/BjyAuthorize/zipball/02723bd19f0bba33649d708022f8d0e0b795f57a",
+                "reference": "02723bd19f0bba33649d708022f8d0e0b795f57a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-cache": "~2.1",
+                "zendframework/zend-eventmanager": "~2.1",
+                "zendframework/zend-http": "~2.1",
+                "zendframework/zend-mvc": "~2.1",
+                "zendframework/zend-permissions-acl": "~2.1",
+                "zendframework/zend-servicemanager": "~2.1",
+                "zendframework/zend-view": "~2.1"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.3,<2.5-dev",
+                "phpunit/phpunit": "~3.7",
+                "satooshi/php-coveralls": "~0.6",
+                "squizlabs/php_codesniffer": "1.4.*",
+                "zendframework/zend-developer-tools": "0.*",
+                "zf-commons/zfc-user": "0.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "BjyAuthorize\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ben Youngblood",
+                    "email": "bx.youngblood@gmail.com",
+                    "homepage": "http://bjyoungblood.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Zend\\Acl based firewall system for ZF2 dispatch protection",
+            "homepage": "https://github.com/bjyoungblood/BjyAuthorize",
+            "keywords": [
+                "acl",
+                "zf2",
+                "zfc-user"
+            ],
+            "time": "2013-07-05 11:59:46"
+        },
         {
             "name": "bshaffer/oauth2-server-php",
             "version": "v1.5",
@@ -906,6 +976,50 @@
             "time": "2014-11-19 18:18:56"
         },
         {
+            "name": "erusev/parsedown-extra",
+            "version": "0.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown-extra.git",
+                "reference": "77f604b65b08550f229c2e79c0427c84c0c0979e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/77f604b65b08550f229c2e79c0427c84c0c0979e",
+                "reference": "77f604b65b08550f229c2e79c0427c84c0c0979e",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2014-11-20 20:21:03"
+        },
+        {
             "name": "guzzle/guzzle",
             "version": "v3.9.2",
             "source": {
@@ -1210,55 +1324,6 @@
             "time": "2013-12-12 15:42:53"
         },
         {
-            "name": "hybridauth/hybridauth",
-            "version": "v2.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hybridauth/hybridauth.git",
-                "reference": "b32c4bf14007c80118a88c5e249f4e3151585732"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hybridauth/hybridauth/zipball/b32c4bf14007c80118a88c5e249f4e3151585732",
-                "reference": "b32c4bf14007c80118a88c5e249f4e3151585732",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Hybrid": "hybridauth/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "(MIT or GPL-3.0+)"
-            ],
-            "authors": [
-                {
-                    "name": "Miled",
-                    "email": "hybridauth@gmail.com"
-                }
-            ],
-            "description": "Open source social sign on PHP library.",
-            "homepage": "http://hybridauth.sourceforge.net",
-            "keywords": [
-                "OpenId",
-                "facebook",
-                "google",
-                "hybridauth",
-                "login",
-                "oauth",
-                "social",
-                "twitter",
-                "yahoo"
-            ],
-            "time": "2014-07-11 20:25:12"
-        },
-        {
             "name": "kriswallsmith/assetic",
             "version": "v1.1.2",
             "source": {
@@ -1331,24 +1396,25 @@
         },
         {
             "name": "maglnet/magl-markdown",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maglnet/MaglMarkdown.git",
-                "reference": "6287a2db9c29eb51e6cbaba3e95535b1f7da5c78"
+                "reference": "bb0de69f231038c74bca401fabcd337659074fa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maglnet/MaglMarkdown/zipball/6287a2db9c29eb51e6cbaba3e95535b1f7da5c78",
-                "reference": "6287a2db9c29eb51e6cbaba3e95535b1f7da5c78",
+                "url": "https://api.github.com/repos/maglnet/MaglMarkdown/zipball/bb0de69f231038c74bca401fabcd337659074fa2",
+                "reference": "bb0de69f231038c74bca401fabcd337659074fa2",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown": "~1.0",
+                "erusev/parsedown-extra": "~0.2.6",
                 "ext-curl": "*",
                 "michelf/php-markdown": "~1.4",
                 "php": ">=5.3.0",
-                "zendframework/zendframework": "~2.2"
+                "zendframework/zendframework": "~2.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -1358,8 +1424,8 @@
                 "classmap": [
                     "src"
                 ],
-                "psr-0": {
-                    "MaglMarkdown": "src"
+                "psr-4": {
+                    "MaglMarkdown\\": "src/MaglMarkdown/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1383,7 +1449,7 @@
                 "parsedown",
                 "zf2"
             ],
-            "time": "2014-05-25 09:10:51"
+            "time": "2014-11-23 00:07:30"
         },
         {
             "name": "michelf/php-markdown",
@@ -1596,116 +1662,109 @@
             "time": "2014-05-29 15:34:41"
         },
         {
-            "name": "socalnick/scn-social-auth",
-            "version": "1.15.0",
+            "name": "soliantconsulting/entity-audit",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SocalNick/ScnSocialAuth.git",
-                "reference": "51d91d8a4ffa2216d70127b94fbfc8dd8ba0aed5"
+                "url": "https://github.com/soliantconsulting/SoliantEntityAudit.git",
+                "reference": "9e832b66ec5382c09a87e2ba7fe9bdb0cfafec23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocalNick/ScnSocialAuth/zipball/51d91d8a4ffa2216d70127b94fbfc8dd8ba0aed5",
-                "reference": "51d91d8a4ffa2216d70127b94fbfc8dd8ba0aed5",
+                "url": "https://api.github.com/repos/soliantconsulting/SoliantEntityAudit/zipball/9e832b66ec5382c09a87e2ba7fe9bdb0cfafec23",
+                "reference": "9e832b66ec5382c09a87e2ba7fe9bdb0cfafec23",
                 "shasum": ""
             },
             "require": {
-                "hybridauth/hybridauth": "2.2.*",
-                "php": ">=5.3.3",
-                "zendframework/zendframework": "2.*",
-                "zf-commons/zfc-base": "0.1.*",
-                "zf-commons/zfc-user": "1.2.*"
+                "doctrine/doctrine-module": "0.8.*@dev",
+                "doctrine/doctrine-orm-module": "0.8.x@dev",
+                "php": ">=5.3.0",
+                "zendframework/zendframework": ">=2.1"
             },
             "require-dev": {
-                "mockery/mockery": "0.8.0"
+                "phpunit/phpunit": "3.7.14",
+                "zf-commons/zfc-user": "0.1.1",
+                "zf-commons/zfc-user-doctrine-orm": "dev-master"
             },
-            "type": "library",
+            "type": "zf-module",
             "autoload": {
                 "psr-0": {
-                    "ScnSocialAuth": "src/",
-                    "ScnSocialAuthTest": "test/"
+                    "SoliantEntityAudit": "src/"
                 },
                 "classmap": [
-                    "./"
+                    "./Module.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Nicholas Calugar",
-                    "email": "njcalugar@gmail.com",
-                    "homepage": "http://socalnick.github.com/"
+                    "name": "Tom Anderson",
+                    "email": "tanderson@soliantconsulting.com",
+                    "homepage": "http://www.soliantconsulting.com"
+                },
+                {
+                    "name": "Tawfek Daghistani",
+                    "email": "tawfekov@gmail.com",
+                    "homepage": "http://www.dagho.com"
                 }
             ],
-            "description": "Uses the HybridAuth PHP library to Enable authentication via Google, Facebook, Twitter, Yahoo!, etc for the ZfcUser ZF2 module.",
-            "homepage": "https://github.com/SocalNick/ScnSocialAuth",
+            "description": "Doctrine 2 Entity Auditing",
             "keywords": [
-                "zf2"
+                "Audit",
+                "doctrine"
             ],
-            "time": "2014-09-08 02:38:07"
+            "time": "2014-11-24 00:03:23"
         },
         {
-            "name": "socalnick/scn-social-auth-doctrine-orm",
-            "version": "1.4.0",
+            "name": "stuki/oauth2-simple-client",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SocalNick/ScnSocialAuthDoctrineORM.git",
-                "reference": "e45d9cc90043f4aeaeb540a6301984042917c728"
+                "url": "https://github.com/StukiOrg/oauth2-simple-client.git",
+                "reference": "480c732927583b889055cabaf70bf397fd454334"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocalNick/ScnSocialAuthDoctrineORM/zipball/e45d9cc90043f4aeaeb540a6301984042917c728",
-                "reference": "e45d9cc90043f4aeaeb540a6301984042917c728",
+                "url": "https://api.github.com/repos/StukiOrg/oauth2-simple-client/zipball/480c732927583b889055cabaf70bf397fd454334",
+                "reference": "480c732927583b889055cabaf70bf397fd454334",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "socalnick/scn-social-auth": "1.*",
-                "zendframework/zendframework": "2.*",
-                "zf-commons/zfc-user-doctrine-orm": "1.*"
+                "guzzle/guzzle": "~3.7",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "ScnSocialAuthDoctrineORM": "src/"
-                },
-                "classmap": [
-                    "./"
-                ]
+                "psr-4": {
+                    "Stuki\\OAuth2\\Client\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Nicholas Calugar",
-                    "email": "njcalugar@gmail.com",
-                    "homepage": "http://socalnick.github.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Jérémy Huet",
-                    "email": "jeremy.huet+github@gmail.com",
-                    "homepage": "http://glpl.us/jhuet",
-                    "role": "Developer"
+                    "name": "Tom Anderson",
+                    "email": "tom.h.anderson@gmail.com"
                 }
             ],
-            "description": "An extension of ScnSocialAuth that provides integration with Doctrine2 ORM.",
-            "homepage": "https://github.com/SocalNick/ScnSocialAuthDoctrineORM",
+            "description": "A simply better OAuth2 Client",
             "keywords": [
-                "doctrine2",
-                "hybridauth",
-                "oauth",
-                "orm",
-                "socialauth",
-                "zf2",
-                "zfc"
+                "Simple",
+                "easy",
+                "oauth client",
+                "oauth2"
             ],
-            "time": "2014-06-10 15:04:16"
+            "time": "2014-11-23 03:38:51"
         },
         {
             "name": "symfony/console",
@@ -2028,192 +2087,6 @@
                 "zf2"
             ],
             "time": "2014-03-05 22:25:44"
-        },
-        {
-            "name": "zf-commons/zfc-base",
-            "version": "v0.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ZF-Commons/ZfcBase.git",
-                "reference": "fc68a49b58ba68584a9a4c44a1ca9df12b30d1bf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ZF-Commons/ZfcBase/zipball/fc68a49b58ba68584a9a4c44a1ca9df12b30d1bf",
-                "reference": "fc68a49b58ba68584a9a4c44a1ca9df12b30d1bf",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "zendframework/zend-db": "~2.1",
-                "zendframework/zend-eventmanager": "~2.1",
-                "zendframework/zend-loader": "~2.1",
-                "zendframework/zend-modulemanager": "~2.1",
-                "zendframework/zend-mvc": "~2.1",
-                "zendframework/zend-servicemanager": "~2.1",
-                "zendframework/zend-stdlib": "~2.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "ZfcBase": "src/"
-                },
-                "classmap": [
-                    "./Module.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Kyle Spraggs",
-                    "email": "theman@spiffyjr.me",
-                    "homepage": "http://www.spiffyjr.me/"
-                },
-                {
-                    "name": "Evan Coury",
-                    "email": "me@evancoury.com",
-                    "homepage": "http://blog.evan.pro/"
-                }
-            ],
-            "description": "A set of genetic (abstract) classes which are commonly used across multiple modules.",
-            "homepage": "https://github.com/ZF-Commons/ZfcBase",
-            "keywords": [
-                "zf2"
-            ],
-            "time": "2013-05-02 12:33:49"
-        },
-        {
-            "name": "zf-commons/zfc-user",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ZF-Commons/ZfcUser.git",
-                "reference": "7b499ce2174fcf57ca97ccd2211fdfce5190be24"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ZF-Commons/ZfcUser/zipball/7b499ce2174fcf57ca97ccd2211fdfce5190be24",
-                "reference": "7b499ce2174fcf57ca97ccd2211fdfce5190be24",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "zendframework/zend-authentication": "~2.1",
-                "zendframework/zend-crypt": "~2.1",
-                "zendframework/zend-form": "~2.1",
-                "zendframework/zend-http": "~2.1",
-                "zendframework/zend-inputfilter": "~2.1",
-                "zendframework/zend-loader": "~2.1",
-                "zendframework/zend-modulemanager": "~2.1",
-                "zendframework/zend-mvc": "~2.1",
-                "zendframework/zend-servicemanager": "~2.1",
-                "zendframework/zend-session": "~2.1",
-                "zendframework/zend-stdlib": "~2.1",
-                "zendframework/zend-validator": "~2.1",
-                "zendframework/zend-view": "~2.1",
-                "zf-commons/zfc-base": "0.*"
-            },
-            "require-dev": {
-                "phpmd/phpmd": "1.4.*",
-                "phpunit/phpunit": ">=3.7,<4",
-                "squizlabs/php_codesniffer": "1.4.*",
-                "zendframework/zend-captcha": "~2.1"
-            },
-            "suggest": {
-                "zendframework/zend-captcha": "Zend\\Captcha if you want to use the captcha component"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "ZfcUser": "src/"
-                },
-                "classmap": [
-                    "./Module.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Spraggs",
-                    "email": "theman@spiffyjr.me",
-                    "homepage": "http://www.spiffyjr.me/"
-                },
-                {
-                    "name": "Evan Coury",
-                    "email": "me@evancoury.com",
-                    "homepage": "http://blog.evan.pro/"
-                }
-            ],
-            "description": "A generic user registration and authentication module for ZF2. Supports Zend\\Db and Doctrine2.",
-            "homepage": "https://github.com/ZF-Commons/ZfcUser",
-            "keywords": [
-                "zf2"
-            ],
-            "time": "2014-07-14 10:03:22"
-        },
-        {
-            "name": "zf-commons/zfc-user-doctrine-orm",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ZF-Commons/ZfcUserDoctrineORM.git",
-                "reference": "9a2e148c9a5a03ca8592b93ea28a21e37b06e053"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ZF-Commons/ZfcUserDoctrineORM/zipball/9a2e148c9a5a03ca8592b93ea28a21e37b06e053",
-                "reference": "9a2e148c9a5a03ca8592b93ea28a21e37b06e053",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/doctrine-orm-module": "0.*",
-                "php": ">=5.3.3",
-                "zf-commons/zfc-user": "1.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "ZfcUserDoctrineORM": "src/"
-                },
-                "classmap": [
-                    "./"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Spraggs",
-                    "email": "theman@spiffyjr.me",
-                    "homepage": "http://www.spiffyjr.me/"
-                },
-                {
-                    "name": "Evan Coury",
-                    "email": "me@evancoury.com",
-                    "homepage": "http://blog.evan.pro/"
-                }
-            ],
-            "description": "Doctrine2 ORM storage adapter for ZfcUser.",
-            "homepage": "https://github.com/ZF-Commons/ZfcUserDoctrineORM",
-            "keywords": [
-                "zf2"
-            ],
-            "time": "2014-04-18 10:21:19"
         },
         {
             "name": "zfcampus/zf-api-problem",
@@ -3195,12 +3068,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "e50f9880aa5ff81110b2eb2f9793ae7bc8503785"
+                "reference": "0ef5d88420f2294d01198339019457e9646912aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/e50f9880aa5ff81110b2eb2f9793ae7bc8503785",
-                "reference": "e50f9880aa5ff81110b2eb2f9793ae7bc8503785",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/0ef5d88420f2294d01198339019457e9646912aa",
+                "reference": "0ef5d88420f2294d01198339019457e9646912aa",
                 "shasum": ""
             },
             "require": {
@@ -3238,7 +3111,7 @@
                 }
             ],
             "description": "A script to automatically fix Symfony Coding Standard",
-            "time": "2014-11-20 12:47:05"
+            "time": "2014-11-22 17:07:31"
         },
         {
             "name": "fzaninotto/faker",
@@ -3246,12 +3119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "44eae4deeb065454e68b3c9911181285f01003c6"
+                "reference": "d6d0d9d7caf1083cd458836898644dffb714162d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44eae4deeb065454e68b3c9911181285f01003c6",
-                "reference": "44eae4deeb065454e68b3c9911181285f01003c6",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d6d0d9d7caf1083cd458836898644dffb714162d",
+                "reference": "d6d0d9d7caf1083cd458836898644dffb714162d",
                 "shasum": ""
             },
             "require": {
@@ -3287,7 +3160,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-11-12 17:27:49"
+            "time": "2014-11-21 08:40:16"
         },
         {
             "name": "herrera-io/json",
@@ -4877,6 +4750,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dms/meetup-api-client": 20,
+        "stuki/oauth2-simple-client": 20,
         "zendframework/zftool": 20,
         "zendframework/zend-developer-tools": 20,
         "fzaninotto/faker": 20,

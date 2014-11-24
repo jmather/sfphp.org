@@ -28,11 +28,13 @@ return array(
         'DoctrineDataFixtureModule',
         'Phpro\\DoctrineHydrationModule',
         'ZF\\Apigility\\Doctrine\\Server',
+        'BjyAuthorize',
         'MaglMarkdown',
+        'SoliantEntityAudit',
         'Db',
         'Station',
         'ContentManagement',
-        'Admin'
+        'Admin',
     ),
     'module_listener_options' => array(
         'module_paths' => array(
@@ -40,7 +42,7 @@ return array(
             './vendor'
         ),
         'config_glob_paths' => array(
-            '/Users/tom_anderson/Projects/sfphp.org/config/autoload/{,*.}{global,local}.php'
+            __DIR__ . '/autoload/{,*.}{global,local}.php'
         ),
         'config_cache_key' => 'application.config.cache',
         'config_cache_enabled' => true,

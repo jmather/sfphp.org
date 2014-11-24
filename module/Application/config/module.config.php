@@ -21,31 +21,37 @@ return array(
                     ),
                 ),
             ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            'application' => array(
-                'type'    => 'Literal',
+            'authentication' => array(
+                'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/',
+                    'route'    => '/authentication',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Index',
+                        'controller'    => 'Authentication',
                         'action'        => 'index',
                     ),
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'default' => array(
+                    'logout' => array(
                         'type'    => 'Segment',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
+                            'route'    => '/logout',
                             'defaults' => array(
+                                '__NAMESPACE__' => 'Application\Controller',
+                                'controller'    => 'Authentication',
+                                'action'        => 'logout',
+                            ),
+                        ),
+                    ),
+                    'error' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/error',
+                            'defaults' => array(
+                                '__NAMESPACE__' => 'Application\Controller',
+                                'controller'    => 'Authentication',
+                                'action'        => 'error',
                             ),
                         ),
                     ),
@@ -54,6 +60,9 @@ return array(
         ),
     ),
     'service_manager' => array(
+        'invokables' => array(
+            'Zend\Session\SessionManager' => 'Zend\Session\SessionManager',
+        ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
@@ -75,6 +84,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Authentication' => 'Application\Controller\AuthenticationController',
         ),
     ),
     'controller_plugins' => array(

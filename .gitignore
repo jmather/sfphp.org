@@ -9,11 +9,7 @@ local.php
 *.mo
 
 # Data
-data/sqlite.db
-data/logs/
-data/cache/
-data/sessions/
-data/tmp/
+data
 temp/
 
 *.phar

@@ -11,6 +11,12 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\ServiceManager\ServiceManager;
+use Application\Service\MeetupClient;
+use Zend\Session\Container;
+use Zend\Authentication\AuthenticationService;
+use Application\Authentication\Adapter\Meetup as MeetupAdapter;
+use Exception;
 
 class Module
 {
@@ -19,6 +25,19 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        try {
+            $strategy = $e->getApplication()->getServiceManager()->get('BjyAuthorizeViewRedirectionStrategy');
+            $strategy->setRedirectRoute('authentication');
+
+            $session = $e->getApplication()
+                ->getServiceManager()
+                ->get('Zend\Session\SessionManager');
+            $session->start();
+        } catch (Exception $e) {
+            // This will allow the command line to run without breaking when BjyAuthorize is
+            // removed from application.config.php
+        }
     }
 
     public function getConfig()
@@ -33,6 +52,50 @@ class Module
                 'namespaces' => array(
                     __NAMESPACE__ => __DIR__.'/src/'.__NAMESPACE__,
                 ),
+            ),
+        );
+    }
+
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'MeetupClient' => function (ServiceManager $serviceManager) {
+                    $container = new Container('oauth2');
+                    if (isset($container->accessToken)) {
+                        $accessToken = $container->accessToken;
+                    } else {
+                        throw new Exception('The oauth2 session is not configured');
+                    }
+
+                    $client = MeetupClient::factory(['access_token' => $accessToken]);
+
+                    return $client;
+                },
+
+                'MeetupProviderIdentity' => function (ServiceManager $serviceManager) {
+                    $provider = new \Application\Provider\Identity\Meetup();
+                    $provider->setObjectManager($serviceManager->get('doctrine.entitymanager.orm_default'));
+
+                    return $provider;
+                },
+
+                'Zend\Authentication\AuthenticationService' => function (ServiceManager $serviceManager) {
+                    $adapter = new MeetupAdapter();
+                    $adapter->setObjectManager($serviceManager->get('doctrine.entitymanager.orm_default'));
+
+                    try {
+                        $client = $serviceManager->get('MeetupClient');
+                        $adapter->setMeetupClient($client);
+                    } catch (Exception $e) {
+                        #  don't set client if session does not contain oauth2
+                    }
+
+                    $authentication = new AuthenticationService();
+                    $authentication->setAdapter($adapter);
+
+                    return $authentication;
+                },
             ),
         );
     }

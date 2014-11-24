@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="Db\Entity\Member">
-    <id name="id" type="integer">
-      <generator strategy="AUTO"/>
-    </id>
-    <field name="fullname" type="string" nullable="true"/>
-    <field name="username" type="string" nullable="true"/>
-    <field name="email" type="string" nullable="true"/>
-    <field name="displayName" type="string" nullable="true"/>
-    <field name="password" type="string" nullable="true"/>
-    <field name="state" type="integer" nullable="true"/>
+    <id name="id" type="integer"/>
+    <field name="name" type="string" nullable="true"/>
+    <field name="status" type="string" nullable="true"/>
+    <field name="state" type="string" nullable="true"/>
+    <field name="language" type="string" nullable="true"/>
+    <field name="city" type="string" nullable="true"/>
+    <field name="country" type="string" nullable="true"/>
+    <field name="visitedAt" type="datetime" nullable="true"/>
+    <field name="joinedAt" type="datetime" nullable="true"/>
+    <field name="createdAt" type="datetime" nullable="true"/>
+    <field name="updatedAt" type="datetime" nullable="true"/>
+    <field name="lastRequestAt" type="datetime" nullable="true"/>
     <one-to-many field="presentation" target-entity="Db\Entity\Presentation" mapped-by="member"/>
     <one-to-many field="meetupUser" target-entity="Db\Entity\MeetupMember" mapped-by="member"/>
     <one-to-many field="sponsorContact" target-entity="Db\Entity\SponsorContact" mapped-by="member"/>

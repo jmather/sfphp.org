@@ -2,12 +2,18 @@
 
 namespace Db\Entity;
 
+use BjyAuthorize\Acl\HierarchicalRoleInterface;
 
 /**
  * Role
  */
-class Role
+class Role implements HierarchicalRoleInterface
 {
+    public function __toString()
+    {
+        return $this->getRoleId();
+    }
+
     /**
      * @var string
      */
