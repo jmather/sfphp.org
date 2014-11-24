@@ -27,6 +27,10 @@ class Meetup implements AdapterInterface
 
     public function authenticate()
     {
+        if (!$this->getMeetupClient()) {
+            return new Result(Result::FAILURE, null, []);
+        }
+
         try {
             $self = $this->getMeetupClient()->getMember(['id' => 'self'])->toArray();
         } catch (\Exception $e) {
@@ -35,17 +39,33 @@ class Meetup implements AdapterInterface
         $member = $this->getObjectManager()->getRepository('Db\Entity\Member')->find($self['id']);
 
         if (!$member) {
+            $addAdministrator = false;
+            // Special handling if this is the first user in the system
+            if (!sizeof($this->getObjectManager()->getRepository('Db\Entity\Member')->findAll())) {
+                $addAdministrator = true;
+            }
+
             $member = new Entity\Member();
             $member->setId($self['id']);
             $member->setCreatedAt(new \DateTime());
             $this->getObjectManager()->persist($member);
 
-            $userRole = $this->getObjectManager()->getRepository('Db\Entity\Role')->findOneBy([
-                'roleId' => 'user',
+            $memberRole = $this->getObjectManager()->getRepository('Db\Entity\Role')->findOneBy([
+                'roleId' => 'member',
             ]);
 
-            $userRole->addMember($member);
-            $member->addRole($userRole);
+            $memberRole->addMember($member);
+            $member->addRole($memberRole);
+
+            // Member is first; make admin
+            if ($addAdministrator) {
+                $administratorRole = $this->getObjectManager()->getRepository('Db\Entity\Role')->findOneBy([
+                    'roleId' => 'administrator',
+                ]);
+
+                $administratorRole->addMember($member);
+                $member->addRole($administratorRole);
+            }
         }
 
         $member->exchangeArray($self);

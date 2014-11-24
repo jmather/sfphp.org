@@ -44,7 +44,8 @@
         "dms/meetup-api-client": "1.0.x-dev",
         "maglnet/magl-markdown": "~1.1",
         "stuki/oauth2-simple-client": "dev-master",
-        "bjyoungblood/bjy-authorize": "1.4.*"
+        "bjyoungblood/bjy-authorize": "1.4.*",
+        "soliantconsulting/entity-audit": "1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*",

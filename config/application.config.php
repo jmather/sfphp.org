@@ -30,10 +30,11 @@ return array(
         'ZF\\Apigility\\Doctrine\\Server',
         'BjyAuthorize',
         'MaglMarkdown',
+        'SoliantEntityAudit',
         'Db',
         'Station',
         'ContentManagement',
-        'Admin'
+        'Admin',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

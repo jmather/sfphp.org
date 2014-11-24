@@ -26,13 +26,18 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
 
-        $strategy = $e->getApplication()->getServiceManager()->get('BjyAuthorizeViewRedirectionStrategy');
-        $strategy->setRedirectRoute('authentication');
+        try {
+            $strategy = $e->getApplication()->getServiceManager()->get('BjyAuthorizeViewRedirectionStrategy');
+            $strategy->setRedirectRoute('authentication');
 
-        $session = $e->getApplication()
-            ->getServiceManager()
-            ->get('Zend\Session\SessionManager');
-        $session->start();
+            $session = $e->getApplication()
+                ->getServiceManager()
+                ->get('Zend\Session\SessionManager');
+            $session->start();
+        } catch (Exception $e) {
+            // This will allow the command line to run without breaking when BjyAuthorize is
+            // removed from application.config.php
+        }
     }
 
     public function getConfig()

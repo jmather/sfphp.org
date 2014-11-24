@@ -10,6 +10,11 @@ use DateTime;
  */
 class Member implements ArraySerializableInterface
 {
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function exchangeArray(array $array)
     {
         foreach ($array as $field => $value) {
@@ -73,6 +78,17 @@ class Member implements ArraySerializableInterface
             'createdAt' => $this->getCreatedAt(),
             'updatedAt' => $this->getUpdatedAt(),
         ];
+    }
+
+    // Getters for auditing
+    public function getDisplayName()
+    {
+        return $this->name;
+    }
+
+    public function getEmail()
+    {
+        return 'https://www.meetup.com/members/'.$this->getId();
     }
 
     /**

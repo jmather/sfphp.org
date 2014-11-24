@@ -12,6 +12,11 @@ use DateTime;
  */
 class Page implements InputFilterAwareInterface, ArraySerializableInterface
 {
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
     public function exchangeArray(array $array)
     {
         foreach ($array as $field => $value) {

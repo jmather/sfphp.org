@@ -18,11 +18,13 @@ class Meetup implements ProviderInterface
             $user = $this->getObjectManager()->getRepository('Db\Entity\Member')->find($authService->getIdentity()->getId());
 
             // Update user last Request At anytime roles are loaded
-            $user->setLastRequestAt(new \DateTime());
-            $this->getObjectManager()->flush();
+            if ($user) {
+                #                $user->setLastRequestAt(new \DateTime());
+#                $this->getObjectManager()->flush();
 
-            foreach ($user->getRole() as $role) {
-                $return[] = $role->getRoleId();
+                foreach ($user->getRole() as $role) {
+                    $return[] = $role->getRoleId();
+                }
             }
         }
 

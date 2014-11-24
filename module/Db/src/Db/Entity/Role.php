@@ -9,6 +9,11 @@ use BjyAuthorize\Acl\HierarchicalRoleInterface;
  */
 class Role implements HierarchicalRoleInterface
 {
+    public function __toString()
+    {
+        return $this->getRoleId();
+    }
+
     /**
      * @var string
      */

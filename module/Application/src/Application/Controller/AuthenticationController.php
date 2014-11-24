@@ -6,6 +6,8 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Stuki\OAuth2\Client;
 use Zend\Session\Container;
 use Zend\Authentication\Result;
+use Application\Service\MeetupClient;
+use Application\Authentication\Adapter\Meetup as MeetupAdapter;
 
 class AuthenticationController extends AbstractActionController
 {
@@ -41,18 +43,25 @@ class AuthenticationController extends AbstractActionController
                 return $this->plugin('redirect')->toRoute('authentication/error');
             }
 
-            // Store the access and refresh token for future use
-            $container = new Container('oauth2');
-            $container->accessToken = $token->accessToken;
-            $container->refreshToken = $token->refreshToken;
+            // The adapter is built here instead of a service manager so the session can store
+            // the tokens and it will pass this first run.
+            $authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
+            $adapter = new MeetupAdapter();
+            $adapter->setObjectManager($this->getServiceLocator()->get('doctrine.entitymanager.orm_default'));
+            $adapter->setMeetupClient(MeetupClient::factory(['access_token' => $token->accessToken]));
 
-            $result = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService')->authenticate();
+            $result = $authService->authenticate($adapter);
 
             switch ($result->getCode()) {
                 case Result::FAILURE:
                     return $this->plugin('redirect')->toRoute('authentication/error');
                     break;
                 case Result::SUCCESS:
+                    // Store the access and refresh token for future use
+                    $container = new Container('oauth2');
+                    $container->accessToken = $token->accessToken;
+                    $container->refreshToken = $token->refreshToken;
+
                     return $this->plugin('redirect')->toRoute('member');
                     break;
                 default:

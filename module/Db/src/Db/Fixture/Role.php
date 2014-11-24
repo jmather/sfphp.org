@@ -14,13 +14,13 @@ class Role implements FixtureInterface
         $guest->setRoleId('guest');
         $manager->persist($guest);
 
-        $user = new Entity\Role();
-        $user->setParent($guest);
-        $user->setRoleId('user');
-        $manager->persist($user);
+        $member = new Entity\Role();
+        $member->setParent($guest);
+        $member->setRoleId('member');
+        $manager->persist($member);
 
         $administrator = new Entity\Role();
-        $administrator->setParent($user);
+        $administrator->setParent($member);
         $administrator->setRoleId('administrator');
         $manager->persist($administrator);
 
