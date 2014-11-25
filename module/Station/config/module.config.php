@@ -11,7 +11,7 @@ return array(
             'member' => array(
                 'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/member',
+                    'route'    => '/member[/:id]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Station\Controller',
                         'controller'    => 'Member',

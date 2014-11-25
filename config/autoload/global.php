@@ -28,8 +28,20 @@ return array(
         'userEntityClassName' => 'Db\Entity\Member',
 
         'entities' => array(
-            'Db\Entity\Member' => array(),
-            'Db\Entity\Page' => array(),
+            'Db\Entity\Member' => array(
+                'route' => 'member',
+                'defaults' => array(
+                    'controller' => 'Station\Controller\Member',
+                    'action' => 'index',
+                ),
+            ),
+            'Db\Entity\Page' => array(
+                'route' => 'page',
+                'defaults' => array(
+                    'controller' => 'ContentManagement\Controller\Page',
+                    'action' => 'page',
+                ),
+            ),
             'Db\Entity\Role' => array(),
         ),
     ),
