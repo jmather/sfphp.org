@@ -34,10 +34,11 @@ class Module
                 ->getServiceManager()
                 ->get('Zend\Session\SessionManager');
             $session->start();
-        } catch (Exception $e) {
+        } catch (Exception $exception) {
             // This will allow the command line to run without breaking when BjyAuthorize is
             // removed from application.config.php
         }
+
     }
 
     public function getConfig()

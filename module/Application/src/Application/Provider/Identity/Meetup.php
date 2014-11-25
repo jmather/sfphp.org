@@ -19,8 +19,16 @@ class Meetup implements ProviderInterface
 
             // Update user last Request At anytime roles are loaded
             if ($user) {
-                #                $user->setLastRequestAt(new \DateTime());
-#                $this->getObjectManager()->flush();
+
+                // This is a little hack.  If the user has no roles
+                // then the oauth2 will infinitly loop.  This happens
+                // when a session exists for the current user on a new install
+                // (delete your cookies if reinstalling) then
+                // #voodoo# happens.
+                if (!sizeof($user->getRole())) {
+                    $this->getObjectManager()->remove($user);
+                    $this->getObjectManager()->flush();
+                }
 
                 foreach ($user->getRole() as $role) {
                     $return[] = $role->getRoleId();
