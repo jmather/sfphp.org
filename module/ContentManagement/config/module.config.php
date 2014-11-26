@@ -31,10 +31,20 @@ return array(
                     ),
                 ),
             ),
+            'page-by-id' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/page/[:id]',
+                    'defaults' => array(
+                        'controller'    => 'ContentManagement\Controller\Page',
+                        'action'        => 'index',
+                    ),
+                ),
+            ),
             'page' => array(
                 'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/page/[:url-identifier][:id]',
+                    'route'    => '/page/[:url-identifier]',
                     'defaults' => array(
                         'controller'    => 'ContentManagement\Controller\Page',
                         'action'        => 'index',

@@ -36,7 +36,7 @@ return array(
                 ),
             ),
             'Db\Entity\Page' => array(
-                'route' => 'page',
+                'route' => 'page-by-id',
                 'defaults' => array(
                     'controller' => 'ContentManagement\Controller\Page',
                     'action' => 'page',
