@@ -5,7 +5,7 @@
  *
  * @see https://github.com/zendframework/ZFTool
  */
-return array(
+$configuration = array(
     'modules' => array(
         'Application',
         'ZF\\DevelopmentMode',
@@ -28,7 +28,6 @@ return array(
         'DoctrineDataFixtureModule',
         'Phpro\\DoctrineHydrationModule',
         'ZF\\Apigility\\Doctrine\\Server',
-        'BjyAuthorize',
         'MaglMarkdown',
         'SoliantEntityAudit',
         'Db',
@@ -46,3 +45,13 @@ return array(
         ),
     )
 );
+
+
+// This is a patch-fix for #45 - better solution should be found.
+// Doing this to make the system more user-friendly to set up until then, however.
+var_export($_SERVER['argv']);
+if ($_SERVER['argv'][1] != 'orm:schema-tool:create') {
+    $configuration['modules'][] = 'BjyAuthorize';
+}
+
+return $configuration;
